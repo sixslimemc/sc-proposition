@@ -7,7 +7,7 @@
 
 If content is not declared private, it is public.
 
-## Private Content Declaration
+## Declaring Private Content
 
 The following describes private content declarations.
 

@@ -25,4 +25,5 @@ theme:
     - navigation.footer
 nav:
   - Main: index.md
-  - Test: public_private.md
+  - Public & Private Content: public_private.md
+  - Owned Objects: owned.md
