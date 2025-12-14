@@ -11,7 +11,7 @@ If content is not declared private, it is public.
 
 The following describes private content declarations.
 
-### Datapack Resources
+### Resources/Files
 
 Resources under the `_` directory and all subdirectories (`data/<pack id>/<resource directory>/_/**`). This includes tags (`data/<pack id>/tags/<resource directory>/_/**`).
 
@@ -23,7 +23,7 @@ Scoreboard objectives that start with `_<pack id>`.
 
 Storage data in the `<pack id>:_` storage location or any sub-path of it (`<pack id>:_/**`).
 
-### Custom Item Data (`minecraft:custom_data`)
+### Custom Item Data
 
 All data under `<pack id>._` in `minecraft:custom_data`. (Not `_.<pack id>`)
 

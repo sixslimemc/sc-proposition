@@ -16,7 +16,7 @@ Entities with the '`-`' entity tag.
 
 The handling of owned objects is somewhat subjective, but in general, owned objects **SHOULD NOT** be treated as standard objects, but **SHOULD** still be recognized as objects of their type.
 
-#### Examples:
+#### Examples
 
 * A datapack that converts `stone_pickaxe`s to `copper_pickaxe`s **SHOULD NOT** convert owned `stone_pickaxe`s.
 * A datapack that adds item transport pipes **SHOULD** transport owned items the same as regular items.
