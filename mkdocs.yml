@@ -10,7 +10,7 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
-      primary: indigo
+      primary: blue grey
       accent: teal
 
     - scheme: default
@@ -18,7 +18,7 @@ theme:
         icon: material/brightness-7 
         name: Switch to dark mode
       primary: cyan
-      accent: blue grey
+      accent: deep purple
   features:
     - navigation.path
     - navigation.indexes
