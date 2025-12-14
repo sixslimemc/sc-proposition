@@ -1,4 +1,4 @@
-site_name: SC Proposition
+site_name: The SC Proposition
 site_url: https://sixslime.github.io/sc-proposition
 theme:
   name: material
@@ -25,3 +25,4 @@ theme:
     - navigation.footer
 nav:
   - Main: index.md
+  - Test: public_private.md

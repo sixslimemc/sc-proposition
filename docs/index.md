@@ -1,17 +1,18 @@
-# Welcome to MkDocs
+## The Proposition
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+SC proposes a framework & standard for datapacks that, if adopted, would provide the following:
 
-## Commands
+* Defined seperation of public & private datapack resources.
+* Defined 
+* Extended pack manifest information including:
+    * Dependencies
+    * Version
+    * Author
+    * Entrypoint(s) (e.g. ticking functions)
+    * Abstract Interface Definitions
+    * Abstract Interface Implementations
+    * Display Information (name, desc, links, etc.)
+* Automatic validation and resolution of all datapack manifests.
+* Automatic resolution and application of datapack load order.
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+This sucks
