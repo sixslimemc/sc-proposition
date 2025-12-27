@@ -23,7 +23,7 @@ The handling of owned objects is somewhat subjective, but in general, owned obje
 * A datapack that increases the health of zombies **SHOULD NOT** increase the health of owned zombies.
 * A datapack that adds a weapon that knocks back mobs **SHOULD** knock back owned mobs.
 
-It is important to note the difference between **private** and **owned**: **Private** objects **MUST NOT** be interacted with at all (other than by the defining datapack); **owned** objects **MAY** be interacted with, just not as *standard* objects.
+It is important to note the difference between **private** and **owned**: **Private** objects **MUST NOT** be interacted with at all (other than by the defining datapack); **owned** objects **MAY** be interacted with, but should not be treated as *standard* objects.
 
 
 

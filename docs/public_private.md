@@ -25,7 +25,11 @@ Storage data in the `<pack id>:_` storage location or any sub-path of it (`<pack
 
 ### Custom Item Data
 
-All data under `<pack id>._` in `minecraft:custom_data`. (Not `_.<pack id>`)
+All data under `_<pack id>` in `minecraft:custom_data`.
+
+### Marker Data
+
+All data under `data._<pack id>`.
 
 ### Entity Tags
 
