@@ -28,4 +28,6 @@ nav:
   - Public & Private Content: public_private.md
   - Owned Objects: owned.md
   - Public Functions: functions.md
-  - SlimeCore: slimecore.md
+  - SlimeCore:
+    - slimecore/index.md
+    - Installation: slimecore/installation.md
