@@ -11,7 +11,7 @@ The following describes owned object declarations.
 Items with `-:true` in their `minecraft:custom_data` component.
 
 ### Entities
-Entities with the '`-`' entity tag.
+Entities with the '`-`' entity tag, excluding players.
 
 ## Handling Owned Objects
 

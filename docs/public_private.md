@@ -44,6 +44,6 @@ Items with `_:true` in their `minecraft:custom_data` component.
 
 ### Entities
 
-Entities with the `_` entity tag.
+Entities with the `_` entity tag, excluding players.
 
 *Datapack that added the tag first is the defining datapack.*
