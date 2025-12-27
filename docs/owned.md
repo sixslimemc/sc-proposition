@@ -1,5 +1,6 @@
 # Owned Objects
 
+## Definition
 Some in-world objects (items, entities) can be marked as **owned**, indicating that they **SHOULD NOT** be treated like default/standard objects, but can still be interacted with by any datapack. Generally, this indicates a "custom" object.
 
 ## Declaring Owned Objects

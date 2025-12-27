@@ -1,5 +1,6 @@
 # Public Functions
 
+## Definition
 Public functions in the `-` directory of the `function` registry (`data/<pack id>/function/-/**`) are **user functions**. All other public functions are **developer functions**.
 
 ## User Functions

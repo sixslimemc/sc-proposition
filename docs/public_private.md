@@ -1,6 +1,7 @@
 
 # Public & Private Content
 
+## Definition
 **Public** content **MAY** be accessed by any datapack.
 
 **Private** content **MUST NOT** be accessed/referenced by datapacks other than the datapack that it is defined in.
