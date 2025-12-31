@@ -30,4 +30,5 @@ nav:
   - Public Functions: functions.md
   - SlimeCore:
     - slimecore/index.md
-    - Installation: slimecore/installation.md
+    - Pack Manifests: slimecore/manifest.md
+    - Concepts: slimecore/concepts.md
