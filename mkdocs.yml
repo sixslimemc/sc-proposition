@@ -25,12 +25,13 @@ theme:
     - navigation.footer
     - navigation.sections
 nav:
-  - Overview:
-    - index.md
+  - Introduction: index.md
+  - Overview: overview.md
   - Rules:
-    - Private Content: private.md
-    - Owned Objects: owned.md
-    - Public Functions: functions.md
+    - rules/index.md
+    - Private Content: rules/private.md
+    - Owned Objects: rules/owned.md
+    - Public Functions: rules/functions.md
   - SlimeCore:
     - slimecore/index.md
     - Pack Manifests: slimecore/manifest.md
