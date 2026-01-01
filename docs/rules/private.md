@@ -3,7 +3,7 @@
 
 ## Definition
 
-**Private** content **MUST NOT** be accessed/referenced by packs other than the pack that it is defined in.
+**Private** content **MUST NOT** be accessed by packs other than the pack that it is defined in.
 
 If content is not declared private, it is **public**, and may be accessed by any pack.
 
