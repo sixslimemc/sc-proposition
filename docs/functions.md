@@ -4,21 +4,22 @@
 
 Public functions are split into 2 categories, **user functions** and **developer functions**.
 
-Public functions in the `-` directory of the `function` registry (`data/<pack id>/function/-/**`) are user functions. All other public functions are developer functions.
+Public functions in the `-` directory of the `function` registry (`data/<pack id>/function/-/...`) are user functions while all others are developer functions.
 
 ## User Functions
 
-User functions **SHOULD** provide intended functionality when called directly in-game (via player and/or command blocks) and generally **SHOULD NOT** be called by other functions.
+User functions **SHOULD** provide intended functionality when called directly in-game (via player and/or command block) and generally **SHOULD NOT** be called by other functions.
 
-### Inputs
+### Inputs & Outputs
 
-Dedicated user function inputs **MUST** be provided via macro arguements.
+User function dedicated inputs **MUST** be provided via macro arguements.
 
-### Outputs
-
-Aside from the return code/value, all user function output/work is, formally speaking, a side-effect.
+User functions do not have dedicated outputs; all outputs are, formally speaking, a side-effect.
 
 > If a user function must have output, a common pattern is to set data in `<pack id>:data`.
+
+### Return Codes
+Meaningful information/output **MAY** be conveyed through a user function's return code.
 
 ## Developer Functions
 
@@ -35,7 +36,7 @@ Input data **MUST** be removed/cleared before the function ends; i.e. `<pack id>
 For every developer function (`<datapack>/data/<pack id>/function/<path...>/<function name>.mcfunction`), dedicated function output(s) **MUST** be provided via storage data using the `<pack id>:out` storage location, with the storage path `<function name>.<output name>`.
 
 ### Return Codes
-Non-zero positive valued return codes for developer functions **SHOULD** represent success, while 0 or negative values **SHOULD** represent failure.
+Non-zero positive valued return codes for developer functions **SHOULD** represent a form of success, while 0 or negative values **SHOULD** represent a form of failure.
 
 Developer functions **MAY** not have any meaningful return codes (e.g. a function cannot fail, a function is very simple, etc.), in which case they **SHOULD** return 1 in all cases.
 
@@ -58,6 +59,8 @@ data remove storage foo:in do_something
 return 1
 ```
 
+---
+
 ## Mcdoc Documentation
 
 > TENTATIVE: [Mcdoc](https://spyglassmc.com/user/mcdoc/) is not a finished project.
@@ -73,7 +76,7 @@ For every public function (`<datapack>/data/<pack id>/function/<path...>/<functi
 #### In & Out
 Developer function mcdoc files **MUST** define structs named **In** and **Out**, declaring the structure of the function's input(s) and output(s) respectively.
 
-#### Return Code
+#### Return
 Developer function mcdoc files **MUST** define **Return**, declaring the possible return codes of the function. Return **MUST** either be an `enum(int)` or a `type` with value `int @ <min>..<max>`. If the function's return code is unbounded, the range specifier (`@ <min>..<max>`) **SHOULD** be omitted.
 
 #### Additional Definitions
@@ -106,15 +109,14 @@ struct Out {
     result: int
 }
 
-/// The result of the addition of <a> and <b>.
+/// The result of the addition of <a> and <b>
 type Return = int
-// It would also be acceptable to simply return 1 because the result is already stored in >result<.
-
+// It would also not be unreasonable to simply return 1; >result< already exists.
 ```
 
 > Input/output key documentation for such a simple function is somewhat pedantic/verbose but is included for the sake of example.
 
-### Developer Function Dispatch
+## Mcdoc Dispatch
 
 If a datapack defines any developer functions, it **MUST** include an mcdoc file at filepath `<datapack>/mcdoc/func.mcdoc` that defines exactly 2 structs, **In** and **Out**, dispatching them to `minecraft:storage[<pack id>:in]` and `minecraft:storage[<pack id>:out]` respectively.
 

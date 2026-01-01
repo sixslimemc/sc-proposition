@@ -1,11 +1,13 @@
 # Owned Objects
 
 ## Definition
-Some in-world objects (items, entities) can be marked as **owned**, indicating that they **SHOULD NOT** be treated like default/standard objects, but can still be interacted with by any datapack. Generally, this indicates a "custom" object.
+Some in-world objects (items, entities) can be indicated as **owned**. Owned objects **SHOULD NOT** be treated like default/standard objects, but can still be interacted with by any datapack.
 
-## Declaring Owned Objects
+> Generally, owned indicates a "custom" object.
 
-The following describes owned object declarations.
+## Indication of Owned
+
+The following are indicators of owned objects:
 
 ### Items
 Items with `-:true` in their `minecraft:custom_data` component.

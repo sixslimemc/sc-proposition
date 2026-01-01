@@ -2,15 +2,15 @@
 # Public & Private Content
 
 ## Definition
-**Public** content **MAY** be accessed by any datapack.
+**Public** content **MAY** be accessed by any pack.
 
-**Private** content **MUST NOT** be accessed/referenced by datapacks other than the datapack that it is defined in.
+**Private** content **MUST NOT** be accessed/referenced by packs other than the pack that it is defined in.
 
 If content is not declared private, it is public.
 
-## Declaring Private Content
+## Indication of Private
 
-The following describes private content declarations.
+The following are indicators of private content:
 
 ### Resources/Files
 
@@ -40,10 +40,10 @@ Entity tags that start with `_<pack id>`.
 
 Items with `_:true` in their `minecraft:custom_data` component.
 
-*Datapack that added the data first is the defining datapack.*
+*Pack that added the data first is the defining pack.*
 
 ### Entities
 
 Entities with the `_` entity tag, excluding players.
 
-*Datapack that added the tag first is the defining datapack.*
+*Pack that added the tag first is the defining pack.*
