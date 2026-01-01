@@ -33,11 +33,12 @@ nav:
     - Primary Namespace: rules/primary_namespace.md
     - Private Content: rules/private.md
     - Owned Objects: rules/owned.md
-    - Naming Specifications: rules/naming.md
+    - Scoreboards: rules/scoreboards.md
     - NBT Storage Locations: rules/nbt_storage.md
     - NBT Namespacing: rules/nbt_namespacing.md
     - Public Functions: rules/functions.md
     - Function Tags: rules/function_tags.md
+    - Naming Specifications: rules/naming.md
     - Mcdoc Documentation: rules/mcdoc.md
   - SlimeCore:
     - slimecore/index.md

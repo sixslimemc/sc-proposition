@@ -228,4 +228,5 @@ While not strictly required, ID names **SHOULD** conform to the following:
 
 * 3+ characters in length.
 * Contain no instances of multiple `-` or `_` in sequence.
+* Use `_` to convey a space and `-` to convey a seperator.
 * Start with a letter.
