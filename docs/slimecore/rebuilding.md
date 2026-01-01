@@ -9,12 +9,10 @@ As stated in *[Pack Manifests](./manifest.md)*:
 **Loading** *always* occurs upon world reload (`/reload`), and refers to the following sequence:
 
 1. Call all [preload entrypoints](./manifest.md#preload_entrypoints).
-2. Call all [load tags](#load-tags).
+2. Call all [load tags](.//special_tags.md#load-tag).
 3. Call all [entrypoints](./manifest.md#entrypoints).
 
 Call order in each step is determined by the [world's current build](TODO).
-
-### Load Tags
 
 ## Rebuilding
 

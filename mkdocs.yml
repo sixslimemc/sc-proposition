@@ -25,14 +25,15 @@ theme:
     - navigation.footer
     - navigation.sections
 nav:
-  - Main: index.md
-  - Private Content: private.md
-  - Owned Objects: owned.md
-  - Public Functions: functions.md
+  - Overview:
+    - index.md
+  - Rules:
+    - Private Content: private.md
+    - Owned Objects: owned.md
+    - Public Functions: functions.md
   - SlimeCore:
     - slimecore/index.md
     - Pack Manifests: slimecore/manifest.md
-    - Required Function Tags: slimecore/special_tags.md
+    - Top-Level Function Tags: slimecore/special_tags.md
     - Loading & Rebuilding: slimecore/rebuilding.md
-    - SlimeCore Data: slimecore/data.md
-    - Concepts: slimecore/concepts.md
+    - The Current Build: slimecore/data.md
