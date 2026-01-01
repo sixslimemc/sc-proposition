@@ -216,10 +216,10 @@ URLs **MUST** use the https protocol. Redirect services or shortened URLs **SHOU
 
 The `pack_ref` key contains another pack's pack ID, indicating a reference to that pack in some way. Any pack referenced this way **MUST** be included in `dependencies`.
 
-### Identifier Naming Rules
+### ID Naming Rules
 
-Identifier names **MUST** fulfill the following requirements:
+ID names **MUST** fulfill the following requirements:
 
 * 1-64 characters in length.
 * Contain only lowercase letters, numbers, `-`, and `_` (spaces not allowed).
-* Start with a a lowercase letter.
+* Start with a lowercase letter.
