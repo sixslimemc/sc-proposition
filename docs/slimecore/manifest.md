@@ -1,7 +1,7 @@
 # Pack Manifests
 
 ## Definition
-Packs **MUST NOT** add to the function tags `#minecraft:load` or `#minecraft:tick`. Instead, Packs **MUST** include a **manifest** that declares information on how to load them.
+Packs **MUST NOT** add to the function tags `#minecraft:load` or `#minecraft:tick`. Instead, packs **MUST** include a **manifest** that declares information on how to load them.
 
 To include a manifest, a pack **MUST** call the function `slimecore:api/manifest` *exactly once* within the scope of the function tag `#slimecore:manifest`.
 

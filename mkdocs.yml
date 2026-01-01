@@ -32,4 +32,7 @@ nav:
   - SlimeCore:
     - slimecore/index.md
     - Pack Manifests: slimecore/manifest.md
+    - Required Function Tags: slimecore/special_tags.md
+    - Loading & Rebuilding: slimecore/rebuilding.md
+    - SlimeCore Data: slimecore/data.md
     - Concepts: slimecore/concepts.md
