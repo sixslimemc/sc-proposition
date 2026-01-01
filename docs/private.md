@@ -1,14 +1,13 @@
 
-# Public & Private Content
+# Private Content
 
 ## Definition
-**Public** content **MAY** be accessed by any pack.
 
 **Private** content **MUST NOT** be accessed/referenced by packs other than the pack that it is defined in.
 
-If content is not declared private, it is public.
+If content is not declared private, it is **public**, and may be accessed by any pack.
 
-## Indication of Private
+---
 
 The following are indicators of private content:
 
