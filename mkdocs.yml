@@ -26,15 +26,22 @@ theme:
     - navigation.sections
 nav:
   - Introduction: index.md
+  - Terminology: terminology.md
   - Overview: overview.md
   - Rules:
     - rules/index.md
+    - Primary Namespace: rules/primary_namespace.md
     - Private Content: rules/private.md
     - Owned Objects: rules/owned.md
+    - Naming Specifications: rules/naming.md
+    - NBT Storage Locations: rules/nbt_storage.md
+    - NBT Namespacing: rules/nbt_namespacing.md
     - Public Functions: rules/functions.md
+    - Function Tags: rules/function_tags.md
+    - Mcdoc Documentation: rules/mcdoc.md
   - SlimeCore:
     - slimecore/index.md
     - Pack Manifests: slimecore/manifest.md
     - Top-Level Function Tags: slimecore/special_tags.md
     - Loading & Rebuilding: slimecore/rebuilding.md
-    - The Current Build: slimecore/data.md
+    - SlimeCore Data: slimecore/data.md
