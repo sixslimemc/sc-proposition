@@ -6,7 +6,7 @@
 
 **Define** (verb) - To introduce something that does not exist otherwise--usually in the context of structured data or resources.
 
-**Namespace** (noun) - Generally refers to datapack [namespaces](https://minecraft.wiki/w/Identifier#Namespaces). I.e. refers to the name of a 1st level subdirectory of the `data` directory in a datapack (`<datapack name>/data/<namespace>`).
+**Namespace** (noun) - A datapack [namespace](https://minecraft.wiki/w/Identifier#Namespaces). I.e. refers to the name of a 1st level subdirectory of the `data` directory in a datapack (`<datapack name>/data/<namespace>`).
 
 **Pack** (noun) - Somewhat interchangable synonym for "datapack"--tends to be used in the context of datapack content, while "datapack" tends to be used in the context of datapack files/directories.
 
