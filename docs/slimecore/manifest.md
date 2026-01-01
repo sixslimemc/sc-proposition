@@ -67,11 +67,11 @@ Together, a pack's pack ID and author ID uniquely identify it. Two packs that sh
 
 ## Pack Version (`version`)
 
-The version of this pack, adhering to [semantic versioning](https://semver.org). Represented by a 3-key map with keys `major`, `minor`, and `patch` (representing the version `<major>.<minor>.<patch>`). All 3 keys **MUST** be positive integers, with the minimum version being `0.1.0`.
+The version of this pack, adhering to [semantic versioning](https://semver.org). Represented by a 3-key struct with keys `major`, `minor`, and `patch` (representing the version `<major>.<minor>.<patch>`). All 3 keys **MUST** be positive integers, with the minimum version being `0.1.0`.
 
 ## Download URL (`url`)
 
-The download url of this pack. Must download the exact version of this pack specified by `version`.
+A direct download URL of this pack. Must download the exact version of this pack specified by `version`.
 
 See *[Download URLs](#download-urls)*.
 
@@ -81,14 +81,14 @@ List of this pack's dependency declarations.
 
 A **dependency** is another pack that has it's resources and/or definitions referenced or used by this pack in *any way*. A dependency is said to be *required* if this pack cannot function without it, and *optional* if not (e.g. is only required for additional functionality).
 
-each element of this list declares a dependency, and **MUST** be a map with the following keys:
+each element of this list declares a dependency, and **MUST** be a struct with the following keys:
 
 | Key | Description |
 | --- | --- |
 | `pack_id` | The [pack ID](#pack-id-pack_id--author-id-author_id) of the dependency. |
 | `author_id` | The [author ID](#pack-id-pack_id--author-id-author_id) of the dependency. |
 | `version` | The [version](#pack-version-version) of this dependency that is required, according to [semantic versioning](https://semver.org.). Includes keys `major` and `minor` (not `patch`). |
-| `download.url` | The [download URL](#download-url-url) of the dependency. Download **MUST** be an exact version download, and a downloaded pack version must fulfill the version requirement specified by `version`. |
+| `download.url` | The direct [download URL](#download-url-url) of the dependency. Download **MUST** be an exact version download, and a downloaded pack version must fulfill the version requirement specified by `version`. |
 | `download.version` | The exact [version](#pack-version-version) of the dependency that `download.url` downloads. |
 | `optional` | Boolean, `true` if dependency is optional, `false` if it is required. |
 
@@ -104,7 +104,7 @@ List of this pack's entrypoint declarations.
 
 An **entrypoint** is a function tag matching `#<pack ID>:entrypoint/<entrypoint ID>`. Entrypoints are called after all packs are [loaded](TODO) in the order that they appear in `entrypoints`, while also respecting all 'before'/'after' relationships. Packs can declare any number of entrypoints.
 
-each element of this list declares an entrypoint, and **MUST** be a map with the following keys:
+each element of this list declares an entrypoint, and **MUST** be a struct with the following keys:
 
 | Key | Description |
 | --- | --- |
@@ -112,7 +112,7 @@ each element of this list declares an entrypoint, and **MUST** be a map with the
 | `before` | List of entrypoints from other packs that this entrypoint must be *before* in call order. Key ***MAY** be omitted if empty.* |
 | `after` | List of entrypoints from other packs that this entrypoint must be *after* in call order. Key ***MAY** be omitted if empty.* |
 
-Each element of `before` and `after` keys **MUST** be a map with the following keys:
+Each element of `before` and `after` keys **MUST** be a struct with the following keys:
 
 | Key | Description |
 | --- | --- |
@@ -163,26 +163,63 @@ Packs that define any [abstract functions](TODO) **MUST** declare at least one a
 
 each element of this list declares an abstract interface, and **MUST** be a string indicating it's ID.
 
+The following is a template for an abstract interface declaration:
+```
+# in manifest function...
+data modify storage slimecore:in manifest.pack.abstract_interfaces append value "ABSTRACT INTERFACE ID"
+```
+
 ## Abstract Interface Implementations (`abstract_implementations`)
 
 List of this pack's declared abstract interface implementations.
 
 If this pack implements any [abstract interfaces](#abstract-interface-declarations-abstract_declarations) from other packs, it **MUST** be indicated here. It is the responsibility of the developer to ensure that abstract interface implementation requirements are properly fulfilled.
 
-each element of this list declares an abstract interface implementation, and **MUST** be a map with the following keys:
+each element of this list declares an abstract interface implementation, and **MUST** be a struct with the following keys:
 
 | Key | Description |
 | --- | --- |
 | `pack_ref` | [Pack reference](#manifest-pack-references) (Referenced pack ID). |
 | `id` | ID of implemented abstract interface. |
 
-### Library Indication
+The following is a template for an abstract interface implementation declaration:
+```
+# in manifest function...
+data modify storage slimecore:in manifest.pack.abstract_implementations append value {pack_ref:"OTHER PACK ID", id:"ABSTRACT INTERFACE ID"}
+```
 
-### Display Information
+## Library Indicator (`is_library`)
+
+Boolean indicating whether or not this pack is a library or not.
+
+A pack **SHOULD** be indicated as a **library** if it does not provide any meaningful functionality or features on it's own and is intended to be used as a dependency of other packs; "Meaningful" is to the descretion of the developer to decide.
+
+From a user's perspective, if a pack is a library, it **SHOULD** be uninstalled if there are no packs that declare it as a dependency.
+
+## Display Information (`display`)
+
+Informal information that is useful to users but is not used in processing.
+
+**MUST** be a struct with the following keys:
+
+| Key | Description |
+| --- | --- |
+| `name` | Display name of this pack. |
+| `author_name` | Author's display name. |
+| `summary` | Breif 1-2 sentence length summary of this pack. |
+| `links` | Struct containing external URLs of the author's choosing (see below). |
+
+`links` **MUST** be a struct with the following keys, any/all of which **MAY** be omitted:
+
+| Key | Description |
+| --- | --- |
+| `author` | URL intended to represent the author in a datapack or Minecraft related context (e.g. github profile, modrinth profile, etc.). |
+| `versions` | URL where the latest version or all versions of this pack can be found (e.g. github repository, modrinth page, etc.).
+| `info` | URL to find information about this pack (e.g. documentation, wiki page, etc.).
+
+See *[External URLs](#external-urls).*
 
 ---
-
-
 
 ## Footnotes
 
@@ -190,13 +227,13 @@ each element of this list declares an abstract interface implementation, and **M
 
 > **TENTATIVE**
 
-While no URL standard is enforced, it is recommended to use [github releases](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository) or [MEGA](https://mega.io). If a different download service is used, the download process should be very straightforward given the user opens the url in a standard browser. Use of redirect services or shortened links are *highly discouraged*.
+URLs **MUST** use the https protocol and be a direct download (i.e. no clicking required). While no standard download service is enforced, it is **RECOMMENDED** to use [GitHub releases](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository) or [Modrinth](https://modrinth.com). Redirect services or shortened URLs **SHOULD NOT** be used.
 
-The downloadable file **MUST** be a compressed archive (.zip, .tar, .tar.gz, etc.) that contains only the datapack itself as a plain folder/directory. The datapack **SHOULD** be named according to [standard datapack names](TODO).
+The downloaded file **MUST** be a compressed archive (.zip, .tar, .tar.gz, etc.) that contains the contents of the datapack itself and **SHOULD** be named according to [standard datapack names](TODO).
 
 ### External URLs
 
-While no URL standard is enforced, redirect services or shortened links are *highly discouraged*. Users are expected to navigate external URLs with the same amount of caution as they would with any other URL on the internet.
+URLs **MUST** use the https protocol. Redirect services or shortened URLs **SHOULD NOT** be used. Users are expected to navigate external URLs with the same amount of caution as they would with any other URL on the internet.
 
 ### Manifest Pack References
 
