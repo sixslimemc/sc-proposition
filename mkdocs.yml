@@ -23,6 +23,7 @@ theme:
     - navigation.path
     - navigation.indexes
     - navigation.footer
+    - navigation.sections
 nav:
   - Main: index.md
   - Public & Private Content: public_private.md

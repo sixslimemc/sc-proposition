@@ -1,26 +1,9 @@
 # Pack Manifests
 
-Packs **MUST NOT** add to the function tags `#minecraft:load` or `#minecraft:tick`. Instead, Packs inculde a **manifest** that declares information on how to load them.
+## Definition
+Packs **MUST NOT** add to the function tags `#minecraft:load` or `#minecraft:tick`. Instead, Packs **MUST** include a **manifest** that declares information on how to load them.
 
-Manifests declare following metadata about a pack:
-
-* Pack ID
-* Author ID
-* Pack Version
-* Download URL
-* Dependencies
-* Entrypoints
-* Preload Entrypoints
-* Abstract Interface Declarations
-* Abstract Interface Implementations
-* Library Indicator
-* Display information
-
----
-
-## Including a Manifest
-
-Each pack **MUST** call the function `slimecore:api/manifest` *exactly once* within the scope of the function tag `#slimecore:manifest`.
+To include a manifest, a pack **MUST** call the function `slimecore:api/manifest` *exactly once* within the scope of the function tag `#slimecore:manifest`.
 
 The following is a minimal template for a manifest function:
 
@@ -55,33 +38,31 @@ function slimecore:api/manifest
 
 ---
 
-# Manifest Elements
-
-## Pack ID (`pack_id`) & Author ID (`author_id`)
+## `pack_id` & `author_id`
 
 **Pack ID**: Must exactly match the pack's [primary namespace](TODO).
 
-**Author ID**: A string that identifies the pack author (though technically is just an arbitrary string).
+**Author ID**: While technically arbitrary, **SHOULD** identify the pack's author and stay consistent between packs released by the same author. (See *[ID Naming Rules](#identifier-naming-rules)*)
 
 Together, a pack's pack ID and author ID uniquely identify it. Two packs that share the same pack ID and author ID are recognized as the same pack. No two installed packs can share the same pack ID; this would indicate a namespacing conflict.
 
-## Pack Version (`version`)
+## `version`
 
 The version of this pack, adhering to [semantic versioning](https://semver.org). Represented by a 3-key struct with keys `major`, `minor`, and `patch` (representing the version `<major>.<minor>.<patch>`). All 3 keys **MUST** be positive integers, with the minimum version being `0.1.0`.
 
-## Download URL (`url`)
+## `url`
 
 A direct download URL of this pack. Must download the exact version of this pack specified by `version`.
 
 See *[Download URLs](#download-urls)*.
 
-## Dependencies (`dependencies`)
+## `dependencies`
 
 List of this pack's dependency declarations.
 
 A **dependency** is another pack that has it's resources and/or definitions referenced or used by this pack in *any way*. A dependency is said to be *required* if this pack cannot function without it, and *optional* if not (e.g. is only required for additional functionality).
 
-each element of this list declares a dependency, and **MUST** be a struct with the following keys:
+Each element of this list declares a dependency, and **MUST** be a struct with the following keys:
 
 | Key | Description |
 | --- | --- |
@@ -98,17 +79,17 @@ The following is a template for a dependency declaration:
 data modify storage slimecore:in manifest.pack.dependencies append value {pack_id:"DEP PACK ID", author_id:"DEP AUTHOR ID", version:{major:-1, minor:0}, download:{url:"DEP DOWNLOAD URL", version:{major:-1, minor:0, patch:0}}, optional:false}
 ```
 
-## Entrypoints (`entrypoints`) 
+## `entrypoints`
 
 List of this pack's entrypoint declarations.
 
 An **entrypoint** is a function tag matching `#<pack ID>:entrypoint/<entrypoint ID>`. Entrypoints are called after all packs are [loaded](TODO) in the order that they appear in `entrypoints`, while also respecting all 'before'/'after' relationships. Packs can declare any number of entrypoints.
 
-each element of this list declares an entrypoint, and **MUST** be a struct with the following keys:
+Each element of this list declares an entrypoint, and **MUST** be a struct with the following keys:
 
 | Key | Description |
 | --- | --- |
-| `id` | This entrypoint's ID. A matching function tag **MUST** be defined at `#<pack ID>/entrypoint/<id>`. |
+| `id` | This entrypoint's ID. A matching function tag **MUST** be defined at `#<pack ID>/entrypoint/<id>`. (See *[ID Naming Rules](#identifier-naming-rules)*) |
 | `before` | List of entrypoints from other packs that this entrypoint must be *before* in call order. Key ***MAY** be omitted if empty.* |
 | `after` | List of entrypoints from other packs that this entrypoint must be *after* in call order. Key ***MAY** be omitted if empty.* |
 
@@ -127,13 +108,11 @@ data modify storage slimecore:in manifest.pack.entrypoints[-1].before append val
 data modify storage slimecore:in manifest.pack.entrypoints[-1].after append value {pack_ref:"OTHER PACK ID", id:"OTHER ENTRYPOINT ID 2"}
 ```
 
-### Notes
-
 Because packs cannot add to `#minecraft:tick`, it is standard to declare entrypoint(s) that start self-scheduling function loops. A common pattern is to declare a single entrypoint with ID `tick`.
 
 With that being said, while one entrypoint is usually sufficient for a pack to function on it's own, a pack **SHOULD** declare multiple entrypoints if it performs multiple, conceptually distinct processes in it's tick loop. Declaring multiple entrypoints allows other packs more control over where they can insert their entrypoints, increasing integratability.
 
-## Preload Entrypoints (`preload_entrypoints`)
+## `preload_entrypoints`
 
 List of this pack's preload entrypoint declarations.
 
@@ -143,13 +122,11 @@ Because they are called before any packs are loaded, anything within a preload e
 
 Preload entrypoint declarations follow the same format as [entrypoint](#entrypoints-entrypoints) declarations, but their `id` key must match to a `#<pack ID>:preload_entrypoint/<id>` function tag and their `before`/`after` keys must only reference other preload entrypoints.
 
-### Notes
-
 Preload entrypoints are intended for technical/meta pack processing and generally **SHOULD NOT** be declared without very good reason.
 
 Preload entrypoints **SHOULD NOT** start any self-scheduling function loops.
 
-## Abstract Interface Declarations (`abstract_declarations`)
+## `abstract_declarations`
 
 List of this pack's abstract interface declarations.
 
@@ -161,7 +138,7 @@ It is the responsibility of the author to define and document the fulfillment re
 
 Packs that define any [abstract functions](TODO) **MUST** declare at least one abstract interface.
 
-each element of this list declares an abstract interface, and **MUST** be a string indicating it's ID.
+Each element of this list declares an abstract interface, and **MUST** be a string indicating it's ID. (See *[ID Naming Rules](#identifier-naming-rules)*)
 
 The following is a template for an abstract interface declaration:
 ```
@@ -169,13 +146,13 @@ The following is a template for an abstract interface declaration:
 data modify storage slimecore:in manifest.pack.abstract_interfaces append value "ABSTRACT INTERFACE ID"
 ```
 
-## Abstract Interface Implementations (`abstract_implementations`)
+## `abstract_implementations`
 
 List of this pack's declared abstract interface implementations.
 
 If this pack implements any [abstract interfaces](#abstract-interface-declarations-abstract_declarations) from other packs, it **MUST** be indicated here. It is the responsibility of the developer to ensure that abstract interface implementation requirements are properly fulfilled.
 
-each element of this list declares an abstract interface implementation, and **MUST** be a struct with the following keys:
+Each element of this list declares an abstract interface implementation, and **MUST** be a struct with the following keys:
 
 | Key | Description |
 | --- | --- |
@@ -188,7 +165,7 @@ The following is a template for an abstract interface implementation declaration
 data modify storage slimecore:in manifest.pack.abstract_implementations append value {pack_ref:"OTHER PACK ID", id:"ABSTRACT INTERFACE ID"}
 ```
 
-## Library Indicator (`is_library`)
+## `is_library`
 
 Boolean indicating whether or not this pack is a library or not.
 
@@ -196,7 +173,7 @@ A pack **SHOULD** be indicated as a **library** if it does not provide any meani
 
 From a user's perspective, if a pack is a library, it **SHOULD** be uninstalled if there are no packs that declare it as a dependency.
 
-## Display Information (`display`)
+## `display`
 
 Informal information that is useful to users but is not used in processing.
 
@@ -221,7 +198,7 @@ See *[External URLs](#external-urls).*
 
 ---
 
-## Footnotes
+## Notes
 
 ### Download URLs
 
@@ -238,3 +215,11 @@ URLs **MUST** use the https protocol. Redirect services or shortened URLs **SHOU
 ### Manifest Pack References
 
 The `pack_ref` key contains another pack's pack ID, indicating a reference to that pack in some way. Any pack referenced this way **MUST** be included in `dependencies`.
+
+### Identifier Naming Rules
+
+Identifier names **MUST** fulfill the following requirements:
+
+* 1-64 characters in length.
+* Contain only lowercase letters, numbers, `-`, and `_` (spaces not allowed).
+* Start with a a lowercase letter.
