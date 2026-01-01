@@ -38,11 +38,11 @@ function slimecore:api/manifest
 
 ---
 
-## `pack_id` & `author_id`
+## `pack_id` and `author_id`
 
 **Pack ID**: Must exactly match the pack's [primary namespace](TODO).
 
-**Author ID**: While technically arbitrary, **SHOULD** identify the pack's author and stay consistent between packs released by the same author. (See *[ID Naming Rules](#identifier-naming-rules)*)
+**Author ID**: While technically arbitrary, **SHOULD** identify the pack's author and stay consistent between packs released by the same author. (See *[ID Naming Rules](#id-naming)*)
 
 Together, a pack's pack ID and author ID uniquely identify it. Two packs that share the same pack ID and author ID are recognized as the same pack. No two installed packs can share the same pack ID; this would indicate a namespacing conflict.
 
@@ -66,11 +66,11 @@ Each element of this list declares a dependency, and **MUST** be a struct with t
 
 | Key | Description |
 | --- | --- |
-| `pack_id` | The [pack ID](#pack-id-pack_id--author-id-author_id) of the dependency. |
-| `author_id` | The [author ID](#pack-id-pack_id--author-id-author_id) of the dependency. |
-| `version` | The [version](#pack-version-version) of this dependency that is required, according to [semantic versioning](https://semver.org.). Includes keys `major` and `minor` (not `patch`). |
-| `download.url` | The direct [download URL](#download-url-url) of the dependency. Download **MUST** be an exact version download, and a downloaded pack version must fulfill the version requirement specified by `version`. |
-| `download.version` | The exact [version](#pack-version-version) of the dependency that `download.url` downloads. |
+| `pack_id` | The [pack ID](#pack_id-and-author_id) of the dependency. |
+| `author_id` | The [author ID](#pack_id-and-author_id) of the dependency. |
+| `version` | The [version](#version) of this dependency that is required, according to [semantic versioning](https://semver.org.). Includes keys `major` and `minor` (not `patch`). |
+| `download.url` | The direct [download URL](#url) of the dependency. Download **MUST** be an exact version download, and a downloaded pack version must fulfill the version requirement specified by `version`. |
+| `download.version` | The exact [version](#version) of the dependency that `download.url` downloads. |
 | `optional` | Boolean, `true` if dependency is optional, `false` if it is required. |
 
 The following is a template for a dependency declaration:
@@ -89,7 +89,7 @@ Each element of this list declares an entrypoint, and **MUST** be a struct with 
 
 | Key | Description |
 | --- | --- |
-| `id` | This entrypoint's ID. A matching function tag **MUST** be defined at `#<pack ID>/entrypoint/<id>`. (See *[ID Naming Rules](#identifier-naming-rules)*) |
+| `id` | This entrypoint's ID. A matching function tag **MUST** be defined at `#<pack ID>/entrypoint/<id>`. (See *[ID Naming Rules](#id-naming)*) |
 | `before` | List of entrypoints from other packs that this entrypoint must be *before* in call order. Key ***MAY** be omitted if empty.* |
 | `after` | List of entrypoints from other packs that this entrypoint must be *after* in call order. Key ***MAY** be omitted if empty.* |
 
@@ -116,11 +116,11 @@ With that being said, while one entrypoint is usually sufficient for a pack to f
 
 List of this pack's preload entrypoint declarations.
 
-A **preload entrypoint** is a function tag matching `#<pack ID>:preload_entrypoint/<entrypoint ID>`. Preload entrypoints are functionally identical to regular [entrypoints](#entrypoints-entrypoints), except they are called *before* any packs are [loaded](TODO) (including the declaring pack).
+A **preload entrypoint** is a function tag matching `#<pack ID>:preload_entrypoint/<entrypoint ID>`. Preload entrypoints are functionally identical to regular [entrypoints](#entrypoints), except they are called *before* any packs are [loaded](TODO) (including the declaring pack).
 
 Because they are called before any packs are loaded, anything within a preload entrypoint's scope **MUST** assume that no other packs exist, and that their own pack has not been loaded.
 
-Preload entrypoint declarations follow the same format as [entrypoint](#entrypoints-entrypoints) declarations, but their `id` key must match to a `#<pack ID>:preload_entrypoint/<id>` function tag and their `before`/`after` keys must only reference other preload entrypoints.
+Preload entrypoint declarations follow the same format as [entrypoint](#entrypoints) declarations, but their `id` key must match to a `#<pack ID>:preload_entrypoint/<id>` function tag and their `before`/`after` keys must only reference other preload entrypoints.
 
 Preload entrypoints are intended for technical/meta pack processing and generally **SHOULD NOT** be declared without very good reason.
 
@@ -130,7 +130,7 @@ Preload entrypoints **SHOULD NOT** start any self-scheduling function loops.
 
 List of this pack's abstract interface declarations.
 
-An **abstract interface** is a *representation* of a contract that must be [fulfilled (implemented)](#abstract-interface-implementations-abstract_implementations) by another installed pack. For every abstract interface a pack declares, there must exist exactly one other installed pack that implements it.
+An **abstract interface** is a *representation* of a contract that must be [fulfilled (implemented)](#abstract_implementations) by another installed pack. For every abstract interface a pack declares, there must exist exactly one other installed pack that implements it.
 
 Generally, abstract interfaces are used to represent [abstract functions](TODO), however, abstract interfaces can be used to represent *any* developer-defined contract that must be fulfilled by exactly one other pack.
 
@@ -138,7 +138,7 @@ It is the responsibility of the author to define and document the fulfillment re
 
 Packs that define any [abstract functions](TODO) **MUST** declare at least one abstract interface.
 
-Each element of this list declares an abstract interface, and **MUST** be a string indicating it's ID. (See *[ID Naming Rules](#identifier-naming-rules)*)
+Each element of this list declares an abstract interface, and **MUST** be a string indicating it's ID. (See *[ID Naming Rules](#id-naming)*)
 
 The following is a template for an abstract interface declaration:
 ```
@@ -150,7 +150,7 @@ data modify storage slimecore:in manifest.pack.abstract_interfaces append value 
 
 List of this pack's declared abstract interface implementations.
 
-If this pack implements any [abstract interfaces](#abstract-interface-declarations-abstract_declarations) from other packs, it **MUST** be indicated here. It is the responsibility of the developer to ensure that abstract interface implementation requirements are properly fulfilled.
+If this pack implements any [abstract interfaces](#abstract_declarations) from other packs, it **MUST** be indicated here. It is the responsibility of the developer to ensure that abstract interface implementation requirements are properly fulfilled.
 
 Each element of this list declares an abstract interface implementation, and **MUST** be a struct with the following keys:
 
