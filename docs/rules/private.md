@@ -13,27 +13,27 @@ The following are indicators of private content:
 
 ### Resources/Files
 
-Resources under the `_` directory and all subdirectories (`data/<pack id>/<resource directory>/_/**`). This includes tags (`data/<pack id>/tags/<resource directory>/_/**`).
+Resources under the `_` directory and all subdirectories (`data/<pack ID>/<resource directory>/_/**`). This includes tags (`data/<pack ID>/tags/<resource directory>/_/**`).
 
 ### Scoreboard Objectives
 
-Scoreboard objectives that start with `_<pack id>`.
+Scoreboard objectives that start with `_<pack ID>`.
 
 ### NBT Storage Data
 
-Storage data in the `<pack id>:_` storage location or any sub-path of it (`<pack id>:_/**`).
+Storage data in the `<pack ID>:_` storage location or any sub-path of it (`<pack ID>:_/**`).
 
 ### Custom Item Data
 
-All data under `_<pack id>` in `minecraft:custom_data`.
+All data under `_<pack ID>` in `minecraft:custom_data`.
 
 ### Marker Data
 
-All data under `data._<pack id>`.
+All data under `data._<pack ID>`.
 
 ### Entity Tags
 
-Entity tags that start with `_<pack id>`.
+Entity tags that start with `_<pack ID>`.
 
 ### Items
 

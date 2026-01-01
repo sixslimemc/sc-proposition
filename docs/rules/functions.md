@@ -4,7 +4,7 @@
 
 Public functions are split into 2 categories, **user functions** and **developer functions**.
 
-Public functions in the `-` directory of the `function` registry (`data/<pack id>/function/-/...`) are user functions while all others are developer functions.
+Public functions in the `-` directory of the `function` registry (`data/<pack ID>/function/-/...`) are user functions while all others are developer functions.
 
 ## User Functions
 
@@ -16,7 +16,7 @@ User function dedicated inputs **MUST** be provided via macro arguements.
 
 User functions do not have dedicated outputs; all outputs are, formally speaking, a side-effect.
 
-> If a user function must have output, a common pattern is to set data in `<pack id>:data`.
+> If a user function must have output, a common pattern is to set data in `<pack ID>:data`.
 
 ### Return Codes
 Meaningful information/output **MAY** be conveyed through a user function's return code.
@@ -27,13 +27,15 @@ Developer functions **SHOULD** provide intended functionality when called from f
 
 ### Inputs
 
-For every developer function (`<datapack>/data/<pack id>/function/<path...>/<function name>.mcfunction`), dedicated function input(s) **MUST** be provided via storage data using the `<pack id>:in` storage location, with the storage path `<function name>.<input name>`.
+For every developer function (`<datapack>/data/<pack ID>/function/<path...>/<function name>.mcfunction`), dedicated function input(s) **MUST** be provided via storage data using the `<pack ID>:in` storage location, with the storage path `<function name>.<input name>`.
 
-Input data **MUST** be removed/cleared before the function ends; i.e. `<pack id>:in <function name>` **MUST** be empty after the function returns.
+Input data **MUST** be removed/cleared before the function ends within the function's scope; i.e. `<pack ID>:in <function name>` **MUST** be empty after the function returns.
+
+For functions calling developer functions, it **MUST** be garunteed that no external functions are called between the time input data is set and the developer function is called.
 
 ### Outputs
 
-For every developer function (`<datapack>/data/<pack id>/function/<path...>/<function name>.mcfunction`), dedicated function output(s) **MUST** be provided via storage data using the `<pack id>:out` storage location, with the storage path `<function name>.<output name>`.
+For every developer function (`<datapack>/data/<pack ID>/function/<path...>/<function name>.mcfunction`), dedicated function output(s) **MUST** be provided via storage data using the `<pack ID>:out` storage location, with the storage path `<function name>.<output name>`.
 
 ### Return Codes
 Non-zero positive valued return codes for developer functions **SHOULD** represent a form of success, while 0 or negative values **SHOULD** represent a form of failure.
@@ -65,7 +67,7 @@ return 1
 
 > TENTATIVE: [Mcdoc](https://spyglassmc.com/user/mcdoc/) is not a finished project.
 
-For every public function (`<datapack>/data/<pack id>/function/<path...>/<function name>.mcfunction`), an mcdoc file **MUST** exist at filepath `<datapack>/mcdoc/function/<path...>/<function name>.mcdoc`.
+For every public function (`<datapack>/data/<pack ID>/function/<path...>/<function name>.mcfunction`), an mcdoc file **MUST** exist at filepath `<datapack>/mcdoc/function/<path...>/<function name>.mcdoc`.
 
 ### User Functions
 
@@ -118,9 +120,9 @@ type Return = int
 
 ## Mcdoc Dispatch
 
-If a datapack defines any developer functions, it **MUST** include an mcdoc file at filepath `<datapack>/mcdoc/func.mcdoc` that defines exactly 2 structs, **In** and **Out**, dispatching them to `minecraft:storage[<pack id>:in]` and `minecraft:storage[<pack id>:out]` respectively.
+If a datapack defines any developer functions, it **MUST** include an mcdoc file at filepath `<datapack>/mcdoc/func.mcdoc` that defines exactly 2 structs, **In** and **Out**, dispatching them to `minecraft:storage[<pack ID>:in]` and `minecraft:storage[<pack ID>:out]` respectively.
 
-For every developer function (`<datapack>/data/<pack id>/function/<path...>/<function name>.mcfunction`), a key with name `<function name>` must be defined in both the the **In** and **Out** structs, with type `super::function::<path...>::<function name>::In` or `super::function::<path...>::<function name>::Out` respectively.
+For every developer function (`<datapack>/data/<pack ID>/function/<path...>/<function name>.mcfunction`), a key with name `<function name>` must be defined in both the the **In** and **Out** structs, with type `super::function::<path...>::<function name>::In` or `super::function::<path...>::<function name>::Out` respectively.
 
 If multiple functions have the same top-level name (`<function name>`), the `<function name>` key in these structs **MUST** be a union of all matching function **In**/**Out** types.
 

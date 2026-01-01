@@ -38,6 +38,7 @@ nav:
     - NBT Namespacing: rules/nbt_namespacing.md
     - Public Functions: rules/functions.md
     - Function Tags: rules/function_tags.md
+    - Pack Config: rules/config.md
     - Naming Specifications: rules/naming.md
     - Mcdoc Documentation: rules/mcdoc.md
   - SlimeCore:
