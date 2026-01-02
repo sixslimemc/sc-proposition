@@ -27,7 +27,7 @@ Developer functions **SHOULD** provide intended functionality when called from f
 
 ### Inputs
 
-For every developer function (`<datapack>/data/<pack ID>/function/<path...>/<function name>.mcfunction`), dedicated function input(s) **MUST** be provided via storage data using the `<pack ID>:in` storage location, with the storage path `<function name>.<input name>`.
+Given a developer function, `<pack ID>:<path...>/<function name>`, dedicated function input(s) **MUST** be specified through a struct at path `<function name>` (i.e. `<function name>.<input name>`) in the NBT storage location `<pack ID>:in`.
 
 Input data **MUST** be removed/cleared before the function ends within the function's scope; i.e. `<pack ID>:in <function name>` **MUST** be empty after the function returns.
 
@@ -35,7 +35,7 @@ For functions calling developer functions, it **MUST** be garunteed that no exte
 
 ### Outputs
 
-For every developer function (`<datapack>/data/<pack ID>/function/<path...>/<function name>.mcfunction`), dedicated function output(s) **MUST** be provided via storage data using the `<pack ID>:out` storage location, with the storage path `<function name>.<output name>`.
+Given a developer function, `<pack ID>:<path...>/<function name>`, dedicated function output(s) **MUST** be specified through a struct at path `<function name>` (i.e. `<function name>.<output name>`) in the NBT storage location `<pack ID>:out`.
 
 ### Return Codes
 Non-zero positive valued return codes for developer functions **SHOULD** represent a form of success, while 0 or negative values **SHOULD** represent a form of failure.
@@ -67,7 +67,7 @@ return 1
 
 > TENTATIVE: [Mcdoc](https://spyglassmc.com/user/mcdoc/) is not a finished project.
 
-For every public function (`<datapack>/data/<pack ID>/function/<path...>/<function name>.mcfunction`), an mcdoc file **MUST** exist at filepath `<datapack>/mcdoc/function/<path...>/<function name>.mcdoc`.
+Given a public function, `<pack ID>:<path...>/<function name>`, an mcdoc file **MUST** exist at filepath `<datapack>/mcdoc/function/<path...>/<function name>.mcdoc`.
 
 ### User Functions
 
