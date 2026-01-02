@@ -21,15 +21,15 @@ Scoreboard objectives that start with `_<pack ID>`.
 
 ### NBT Storage Data
 
-Storage data in the `<pack ID>:_` storage location or any sub-path of it (`<pack ID>:_/**`).
+Data in the `<pack ID>:_` storage location or any sub-path of it (`<pack ID>:_/**`).
 
 ### Custom Item Data
 
-All data under `_<pack ID>` in `minecraft:custom_data`.
+Data at NBT path `components."minecraft:custom_data"._<pack ID>`.
 
-### Marker Data
+### Custom Entity Data
 
-All data under `data._<pack ID>`.
+Data at NBT path `data._<pack ID>`.
 
 ### Entity Tags
 
