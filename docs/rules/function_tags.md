@@ -45,7 +45,7 @@ data modify storage foo:hook my_hook set value {some_data:5}
 function #foo:hook/my_hook
 ```
 
-*File for `#foo:hook/my_hook` in datapack `bar` (appending/subscribing to hook)*:
+*File for `#foo:hook/my_hook` in datapack `bar` (specifying subscriber)*:
 ```json
 {
     "values": [
@@ -118,7 +118,7 @@ data remove storage foo:abstract/out my_abstract
 function #foo:abstract/my_abstract
 ```
 
-*File for `#foo:abstract/my_abstract` in datapack `bar` (providing implementation subscriber)*:
+*File for `#foo:abstract/my_abstract` in datapack `bar` (specifying subscriber)*:
 ```json
 {
     "replace": true,
