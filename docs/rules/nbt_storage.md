@@ -18,11 +18,11 @@ Packs **MAY** store data in any subpath of `<pack ID>:_` (e.g. `<pack ID>:_/foo/
 
 ### `<pack ID>:api`
 
-For specific/specialized-use public, ephemeral data.
+For specific/specialized-use or otherwise contextual, public ephemeral data.
 
 Data within this storage location is public and **SHOULD** be ephemeral.
 
-> Conceptually similar to `<pack ID>:hook` but allows for flexibility if a pack does not use defined hooks (such as calling an externally provided function via macro).
+> Conceptually similar to `<pack ID>:hook` but allows for flexibility of unique interaction/APIs (such as calling an externally provided function via macro).
 
 ### `<pack ID>:hook`
 
