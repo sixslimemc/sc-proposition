@@ -6,11 +6,11 @@
 
 **Define** (verb) - To introduce something that does not exist otherwise--usually in the context of structured data or resources.
 
-**Ephemeral** (adjective) - Exists or is useful only within the scope it is declared/defined.
+**Ephemeral** (adjective) - Exists or is useful only within the scope it is defined.
 
 **External** (adjective) - Defined in a namespace other than the pack's primary namespace.
 
-**Namespace** (noun) - A datapack [namespace](https://minecraft.wiki/w/Identifier#Namespaces). I.e. refers to the name of a 1st level subdirectory of the `data` directory in a datapack (`<datapack name>/data/<namespace>`).
+**Namespace** (noun) - A datapack [namespace](https://minecraft.wiki/w/Identifier#Namespaces); refers to the name of a 1st level subdirectory of the `data` directory in a datapack (`<datapack name>/data/<namespace>`).
 
 **Owned** (adjective) - *See [Owned Objects](./rules/owned.md).*
 
@@ -18,7 +18,7 @@
 
 **Pack ID** (noun) - *See [Pack ID](./slimecore/manifest.md#pack_id-and-author_id)*. Interchangeable with "primary namespace".
 
-**Persistent** (adjective) - Exists for longer than the scope it is defined/declared.
+**Persistent** (adjective) - Exists for longer than the scope it is defined.
 
 **Primary Namespace** (noun) - *See [Primary Namespace](./rules/primary_namespace.md).*
 

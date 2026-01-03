@@ -3,9 +3,9 @@
 
 ## Definition
 
-**Private** content **MUST NOT** be accessed by packs other than the pack that it is defined in.
+**Private** content **MUST NOT** be accessed by packs other than the pack that it is defined in. *(I.e. private content does not exist to any pack outside of it's defining pack.)*
 
-If content is not declared private, it is **public**, and may be accessed by any pack.
+Content that is not private is **public**, and may be accessed by any pack.
 
 ---
 

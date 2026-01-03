@@ -8,20 +8,20 @@ Private scoreboard objective names (with the exception of the [private register]
 
 ### Entity Tags
 
-Public entity tag names **MUST** be in the form `<pack ID>.<identifier>`, where `identifier` is a [public identifier](#public-identifiers).
+Public entity tag names (with the exception of [`_`](./private.md#entities) and [`-`](./owned.md#entities)) **MUST** be in the form `<pack ID>.<identifier>`, where `identifier` is a [public identifier](#public-identifiers).
 
-Private entity tag names (with the exception of the [private entity indicator](./private.md#entities) and [owned entity indicator](./owned.md#entities)) **MUST** be in the form `_<pack ID>.<identifier>` where `identifier` is a [private identifier](#private-identifiers).
+Private entity tag names **MUST** be in the form `_<pack ID>.<identifier>` where `identifier` is a [private identifier](#private-identifiers).
 
-###NBT Struct Keys
+### NBT Struct Keys
 
-NBT struct keys in any public data location **SHOULD** conform to the following:
+NBT struct keys for all public data **SHOULD** conform to the following:
 
 * Contain only lowercase alphanumeric characters and `_`.
 * Not start or end with `_`.
 
 It **MAY** be reasonable to ignore these guidelines if an NBT key is intended to be manipulated or interacted with via macro.
 
-NBT struct keys in private data locations have no restrictions.
+NBT struct keys for private data have no naming restrictions.
 
 ---
 
