@@ -35,7 +35,7 @@ nav:
     - Owned Objects: rules/owned.md
     - Scoreboards: rules/scoreboards.md
     - NBT Storage Locations: rules/nbt_storage.md
-    - NBT Namespacing: rules/nbt_namespacing.md
+    - Custom Data Namespacing: rules/nbt_namespacing.md
     - Public Functions: rules/functions.md
     - Function Tags: rules/function_tags.md
     - Pack Config: rules/config.md

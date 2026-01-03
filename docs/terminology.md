@@ -36,4 +36,4 @@
 
 The use of uppercase bolded words such as **MUST**, **SHOULD**, **MAY**, etc. are in adherence to [RFC 2119](https://www.rfc-editor.org/rfc/rfc2119).
 
-Code-block text surrounded by angle brackets (`<` and `>`) conveys that it should be replaced by what is inside the angle brackets conceptually. For example, in the context of a pack with pack ID `foo`, `<pack ID>` means `foo`.
+Code-block text surrounded by angle brackets conveys that it should be replaced by what is inside the angle brackets conceptually. For example, in the context of a pack with pack ID `foo`, `<pack ID>` means `foo`.

@@ -23,13 +23,12 @@ Scoreboard objectives that start with `_<pack ID>`.
 
 Data in the `<pack ID>:_` storage location or any sub-path of it (`<pack ID>:_/**`).
 
-### Custom Item Data
+### `minecraft:custom_data` Component Data
 
-Data at NBT path `components."minecraft:custom_data"._<pack ID>`.
+Data at path `<pack ID>._` in the `minecraft:custom_data` component. *(Applies to items, blocks, and entities.)*
 
-### Custom Entity Data
+*As of Minecraft version 1.21.11, entities have their `minecraft:custom_data` at path `data`, as opposed to `components."minecraft:custom_data"`.*
 
-Data at NBT path `data._<pack ID>`.
 
 ### Entity Tags
 
