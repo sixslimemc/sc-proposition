@@ -9,7 +9,7 @@ If content is not declared private, it is **public**, and may be accessed by any
 
 ---
 
-The following are indicators of private content:
+The following are definitions of private content:
 
 ### Resources/Files
 

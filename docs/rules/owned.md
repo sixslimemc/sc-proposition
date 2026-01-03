@@ -7,7 +7,7 @@ Some in-world objects (items, entities) can be marked as **owned**. Owned object
 
 ---
 
-The following are marks of owned objects:
+The following are definitions of owned objects:
 
 ### Items
 Items with `-:true` in their `minecraft:custom_data` component.
