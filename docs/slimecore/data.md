@@ -1,6 +1,6 @@
 # SlimeCore Data
 
-After a successful [rebuild](./rebuilding.md#rebuilding), SlimeCore stores the build data in `slimecore:data`, referred to as the "world's current build", seperated into 2 paths `build` and `world`.
+After a successful [rebuild](./rebuilding.md#rebuilding), SlimeCore stores the build data in `slimecore:data`, referred to as the "current build", seperated into 2 structs `build` and `world`.
 
 All data in `slimecore:data` **MUST** be treated as read-only. *Direct manipulation of data within `slimecore:data` may result in unexpected behavior.*
 
