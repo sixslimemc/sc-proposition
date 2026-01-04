@@ -16,7 +16,7 @@ If a pack has any [dependencies](./manifest.md/#dependencies), the dependent pac
 
 A pack's **disable tag** is `#<pack ID>:disable`.
 
-This tag is called during [rebuilding](./rebuilding.md#rebuilding) just before it's pack is disabled, given that the pack was not already disabled before rebuilding.
+This tag is called during [rebuilding](./rebuilding.md#rebuilding) just before it's pack is [disabled](./rebuilding.md#explicitly-rebuilding), given that the pack was not already disabled before rebuilding.
 
 Functions within the scope of a disable tag **SHOULD** temporarily and cleanly remove as much of it's packs influence/content as possible with the assumption that it will be re-enabled in the future--such that the pack "picks back up where it left off" when re-enabled.
 
@@ -26,6 +26,6 @@ A pack's disable tag is *not* called when it is uninstalled, only when it is exp
 
 A pack's **uninstall tag** is `#<pack ID>:uninstall`.
 
-This tag is called during [rebuilding](./rebuilding.md#rebuilding) just before it's pack is uninstalled.
+This tag is called during [rebuilding](./rebuilding.md#rebuilding) just before it's pack is [uninstalled](./rebuilding.md#explicitly-rebuilding).
 
 Functions within the scope of an uninstall tag **SHOULD** permanently and cleanly remove as much content defined by it's pack as possible--such that re-enabling/re-installation of the pack would be no different than installing it for the first time. Content removal includes but is not limited too: scoreboard objectives, NBT storage data, entities, custom items, etc.

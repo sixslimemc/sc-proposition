@@ -31,7 +31,7 @@ Call order in each step is determined by the [world's current build](TODO).
       6. Verify that there are no dependency cycles.
       7. Verify that there exists possible [entrypoint](./manifest.md#entrypoints) and [preload entrypoint](./manifest.md#preload_entrypoints) orderings that fulfills all restrictions.
       8. Create a valid call order of preload entrypoints, load tags, and entrypoints.
-4. If any packs are being disabled/uninstalled, uninstall/disable packs in reverse load order.
+4. If any packs are being [disabled/uninstalled](./rebuilding.md#explicitly-rebuilding), uninstall/disable packs in reverse load order.
 5. Set the [world's current build](TODO) to the evaluated build.
 6. Trigger a [load](#loading).
 

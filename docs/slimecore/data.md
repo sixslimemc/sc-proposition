@@ -69,7 +69,7 @@ The following are keys within the `world` struct:
 
 ### `disabled_packs`
 
-Array of partial pack information that indicates which packs are installed but [disabled](TODO).
+Array of partial pack information that indicates which packs are installed but [disabled](./rebuilding.md#explicitly-rebuilding).
 
 Each element is a partial [pack manifest](manifest.md), only containing the [`pack_id`](./manifest.md#pack_id-and-author_id), [`author_id`](./manifest.md#pack_id-and-author_id), and [`version`](./manifest.md#version) keys.
 
