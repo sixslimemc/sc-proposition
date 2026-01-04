@@ -3,7 +3,9 @@
 SlimeCore completely overhauls the way datapacks are loaded.
 
 As stated in *[Pack Manifests](./manifest.md)*:
-> Packs **MUST NOT** add to the function tags `#minecraft:load` or `#minecraft:tick`. Instead, packs **MUST** include a manifest that declares information on how to load them.
+> Packs **MUST NOT** add to the function tags `#minecraft:load` or `#minecraft:tick` Instead, packs **MUST** include a manifest that declares information on how to load them.
+
+The `/datapack enable` and `/datapack disable` commands **SHOULD NOT** be used under any circumstance. Safe pack disabling/enabling/uninstalling is provided through [explicit rebuilding](#explicitly-rebuilding).
 
 ## Loading
 **Loading** *always* occurs upon world reload (`/reload`), and refers to the following sequence:
@@ -31,6 +33,12 @@ Call order in each step is determined by the [world's current build](TODO).
       8. Create a valid call order of preload entrypoints, load tags, and entrypoints.
 4. If any packs are being disabled/uninstalled, uninstall/disable packs in reverse load order.
 5. Set the [world's current build](TODO) to the evaluated build.
+6. Trigger a [load](#loading).
 
 If any step in the rebuild process fails, the world's previous build remains applied.
 
+By default, rebuilding occurs upon world reload (`/reload`) *iff* any changes to installed [pack manifests](./manifest.md) are detected (including additions/removals).
+
+### Explicitly Rebuilding
+
+Calling the [developer function](../rules/functions.md#developer-functions) `slimecore:rebuild` triggers an explicit rebuild. Explicit rebuilds allows for safe and tracked disabling/enabling/uninstalling of packs. Information on `slimecore:rebuild`'s usage can be found in it's respective [mcdoc](TODO) file within the [SlimeCore datapack](./index.md).
