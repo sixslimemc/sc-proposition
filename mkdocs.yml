@@ -40,7 +40,7 @@ nav:
     - Function Tags: rules/function_tags.md
     - Pack Config: rules/config.md
     - Naming Specifications: rules/naming.md
-    - Mcdoc Documentation: rules/mcdoc.md
+    - Mcdoc: rules/mcdoc.md
   - SlimeCore:
     - slimecore/index.md
     - Pack Manifests: slimecore/manifest.md

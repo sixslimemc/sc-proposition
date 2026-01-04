@@ -13,7 +13,7 @@ The following are definitions of private content:
 
 ### Resources/Files
 
-Resources under the `_` directory and all subdirectories (`data/<pack ID>/<resource directory>/_/**`). This includes tags (`data/<pack ID>/tags/<resource directory>/_/**`).
+Resources in the `_` directory and all subdirectories (`<datapack>/data/<pack ID>/<resource directory>/_/**`). This includes tags (`data/<pack ID>/tags/<resource directory>/_/**`).
 
 ### Scoreboard Objectives
 
@@ -45,3 +45,7 @@ Items with `_:true` in their `minecraft:custom_data` component.
 Entities with the `_` entity tag, excluding players.
 
 *Pack that added the tag first is the defining pack.*
+
+### Mcdoc Structure
+
+All structure defined by mcdoc files in the `_` directory and all subdirectories (`<datapack>/mcdoc/_/**`).
