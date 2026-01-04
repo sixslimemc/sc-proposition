@@ -39,6 +39,8 @@ If any step in the rebuild process fails, the world's previous build remains app
 
 By default, rebuilding occurs upon world reload (`/reload`) *iff* any changes to installed [pack manifests](./manifest.md) are detected (including additions/removals).
 
+Rebuilding can be [explicitly triggered](#explicitly-rebuilding).
+
 ### Explicitly Rebuilding
 
 Calling the [developer function](../rules/functions.md#developer-functions) `slimecore:rebuild` triggers an explicit rebuild. Explicit rebuilds allows for safe and tracked disabling/enabling/uninstalling of packs. Information on `slimecore:rebuild`'s usage can be found in it's respective [mcdoc](TODO) file within the [SlimeCore datapack](./index.md).
