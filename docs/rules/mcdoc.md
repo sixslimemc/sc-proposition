@@ -1,5 +1,7 @@
 # Mcdoc
 
+## Definition
+
 > TENTATIVE: [Mcdoc](https://spyglassmc.com/user/mcdoc/) is an unfinished project (and the SC author's fluency with it could be better).
 
 [Mcdoc](https://spyglassmc.com/user/mcdoc/) is a language used to define and document NBT structure/types.
@@ -11,6 +13,8 @@ All public mcdoc definitions **SHOULD** be properly documented via [documentatio
 > TENTATIVE: Mcdoc paths may be misunderstood by the SC author.
 
 All [mcdoc path references](https://spyglassmc.com/user/mcdoc/specification.html#path) **MUST NOT** be absolute. *(I.e. mcdoc paths must start with `super::`)*.
+
+---
 
 ## `def.mcdoc`
 
@@ -56,7 +60,7 @@ The `In` and `Out` structs **MUST NOT** define any keys outside of the specifica
 
 A datapack **MAY** omit the file `func.mcdoc` entirely if it does not define any [developer functions](./function_tags.md#hooks).
 
-#### Example
+**Example**
 
 Pack `foo` defines the developer functions:
 
@@ -93,7 +97,7 @@ The `In` and `Out` structs **MUST NOT** define any keys outside of the specifica
 
 A datapack **MAY** omit the file `abstract.mcdoc` entirely if it does not define any [abstract functions](./function_tags.md#abstract-functions).
 
-#### Example
+**Example**
 
 Pack `foo` defines the abstract functions:
 
@@ -128,7 +132,7 @@ The `Hook` struct **MUST NOT** define any keys outside of the specification desc
 
 A datapack **MAY** omit the file `hook.mcdoc` entirely if it does not define any [hooks](./function_tags.md#hooks).
 
-#### Example
+**Example**
 
 Pack `foo` defines the hooks:
 
@@ -169,7 +173,7 @@ For every [developer function](./functions.md#developer-functions), `<pack ID>:<
 
 In comments, function inputs **SHOULD** be referenced by their path within `In` surrounded by `<` and `>` ("<`<input path>`>"); function outputs **SHOULD** be referenced by their path within `Out` surrounded by `>` and `<` (">`<output path>`<").
 
-#### Example
+**Example**
 
 A pack, `foo`, defines the developer function `foo:math/add_numbers`. Mcdoc file `function/math/add_numbers.mcdoc` contains:
 
@@ -210,7 +214,7 @@ For every [abstract function](./function_tags.md#abstract-functions), `#<pack ID
 
 In comments, function inputs **SHOULD** be referenced by their path within `In` surrounded by `<` and `>` ("<`<input path>`>"); function outputs **SHOULD** be referenced by their path within `Out` surrounded by `>` and `<` (">`<output path>`<").
 
-#### Example
+**Example**
 
 A pack, `foo`, defines the abstract function `#foo:abstract/do_something`. Mcdoc file `abstract/do_something.mcdoc` contains:
 
@@ -248,7 +252,7 @@ For every [hook](./function_tags.md#hooks), `#<pack ID>:hook/<path...>/<hook nam
 
 In comments, hook pass-data **SHOULD** be referenced by it's path within `Hook` surrounded by `<` and `>` ("<`<pass-data path>`>").
 
-#### Example
+**Example**
 
 A pack, `foo`, defines the hook `#foo:hook/bar`. Mcdoc file `hook/bar.mcdoc` contains:
 

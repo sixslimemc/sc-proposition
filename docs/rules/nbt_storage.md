@@ -1,8 +1,11 @@
 # NBT Storage Locations
 
-Packs **MUST NOT** store data in any NBT storage locations except for those specified below.
 
 ## Valid Locations
+
+Packs **MUST NOT** store data in any NBT storage locations except for the following:
+
+---
 
 ### `<pack ID>:data`
 
