@@ -206,7 +206,7 @@ See *[External URLs](#external-urls).*
 
 URLs **MUST** use the https protocol and be a direct download (i.e. no clicking required). While no standard download service is enforced, it is **RECOMMENDED** to use [GitHub releases](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository) or [Modrinth](https://modrinth.com). Redirect services or shortened URLs **SHOULD NOT** be used.
 
-The downloaded file **MUST** be a compressed archive (.zip, .tar, .tar.gz, etc.) that contains the contents of the datapack itself and **SHOULD** be named according to [standard datapack names](TODO).
+The downloaded file **MUST** be a compressed archive (.zip, .tar, .tar.gz, etc.) that contains the contents of the datapack itself and **SHOULD** be named according to [standard datapack naming formats](./datapack_names.md#standard-format).
 
 ### External URLs
 
