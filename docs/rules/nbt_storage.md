@@ -26,7 +26,7 @@ Data within this storage location is public and **SHOULD** be ephemeral.
 
 ### `<pack ID>:hook`
 
-For passing data through hooks *(see [Hooks](TODO))*.
+For passing data through hooks *(see [Hooks](./function_tags.md#hooks))*.
 
 ### `<pack ID>:in`
 
@@ -38,13 +38,13 @@ For passing outputs from developer functions *(see [Developer Functions](./funct
 
 ### `<pack ID>:abstract/in`
 
-For passing inputs to abstract functions *(see [Abstract Functions](TODO))*.
+For passing inputs to abstract functions *(see [Abstract Functions](./function_tags.md#abstract-functions))*.
 
 ### `<pack ID>:abstract/out`
 
-For passing outputs from abstract functions *(see [Abstract Functions](TODO))*.
+For passing outputs from abstract functions *(see [Abstract Functions](./function_tags.md#abstract-functions))*.
 
 ### `<pack ID>:config`
 
-For specifying pack configuration *(see [Pack Config](TODO))*.
+For specifying pack configuration *(see [Pack Config](./config.md))*.
 

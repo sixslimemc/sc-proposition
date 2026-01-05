@@ -4,7 +4,7 @@
 
 A pack's **config** is all NBT data in the storage location `<pack ID>:config`. Config is intended to provide a standard method of allowing users to configure pack behavior.
 
-Config structure **MUST** be defined and documented via [mcdoc](TODO).
+Config structure **MUST** be defined and documented via [mcdoc](./mcdoc.md#configmcdoc).
 
 Packs **MUST** set default config (for all non-nullable keys) within the scope of their [load tag](../slimecore/special_tags.md#load-tag) when it is called for the *very first* time (installation).
 

@@ -40,7 +40,7 @@ function slimecore:api/manifest
 
 ## `pack_id` and `author_id`
 
-**Pack ID**: Must exactly match the pack's [primary namespace](TODO).
+**Pack ID**: Must exactly match the pack's [primary namespace](../rules/primary_namespace.md).
 
 **Author ID**: While technically arbitrary, **SHOULD** identify the pack's author and stay consistent between packs released by the same author. (See *[ID Naming Rules](#id-naming)*)
 
@@ -83,7 +83,7 @@ data modify storage slimecore:in manifest.pack.dependencies append value {pack_i
 
 List of this pack's entrypoint declarations.
 
-An **entrypoint** is a function tag matching `#<pack ID>:entrypoint/<entrypoint ID>`. Entrypoints are called after all packs are [loaded](TODO) in the order that they appear in `entrypoints`, while also respecting all 'before'/'after' relationships. Packs can declare any number of entrypoints.
+An **entrypoint** is a function tag matching `#<pack ID>:entrypoint/<entrypoint ID>`. Entrypoints are called during [loading](./rebuilding.md#loading), after all [load tags](./special_tags.md#load-tag) are called, in the order that they appear in `entrypoints`, while also respecting all 'before'/'after' relationships. Packs can declare any number of entrypoints.
 
 Each element of this list declares an entrypoint, and **MUST** be a struct with the following keys:
 
@@ -116,7 +116,7 @@ With that being said, while one entrypoint is usually sufficient for a pack to f
 
 List of this pack's preload entrypoint declarations.
 
-A **preload entrypoint** is a function tag matching `#<pack ID>:preload_entrypoint/<entrypoint ID>`. Preload entrypoints are functionally identical to regular [entrypoints](#entrypoints), except they are called *before* any packs are [loaded](TODO) (including the declaring pack).
+A **preload entrypoint** is a function tag matching `#<pack ID>:preload_entrypoint/<entrypoint ID>`. Preload entrypoints are functionally identical to regular [entrypoints](#entrypoints), except they are called *before* any [load tags](./special_tags.md#load-tag) are called (including the declaring pack's).
 
 Because they are called before any packs are loaded, anything within a preload entrypoint's scope **MUST** assume that no other packs exist, and that their own pack has not been loaded.
 
@@ -132,11 +132,11 @@ List of this pack's abstract interface declarations.
 
 An **abstract interface** is a *representation* of a contract that must be [fulfilled (implemented)](#abstract_implementations) by another installed pack. For every abstract interface a pack declares, there must exist exactly one other installed pack that implements it.
 
-Generally, abstract interfaces are used to represent [abstract functions](TODO), however, abstract interfaces can be used to represent *any* developer-defined contract that must be fulfilled by exactly one other pack.
+Generally, abstract interfaces are used to represent [abstract functions](../rules/function_tags.md#abstract-functions), however, abstract interfaces can be used to represent *any* developer-defined contract that must be fulfilled by exactly one other pack.
 
 It is the responsibility of the author to define and document the fulfillment requirements of each of their pack's declared abstract interfaces.
 
-Packs that define any [abstract functions](TODO) **MUST** declare at least one abstract interface.
+Packs that define any [abstract functions](../rules/function_tags.md#abstract-functions) **MUST** declare at least one abstract interface.
 
 Each element of this list declares an abstract interface, and **MUST** be a string indicating it's ID. (See *[ID Naming Rules](#id-naming)*)
 

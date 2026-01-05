@@ -25,6 +25,8 @@ Meaningful information/output **MAY** be conveyed through a user function's retu
 
 Developer functions **SHOULD** provide intended functionality when called from functions and generally **SHOULD NOT** be called directly in-game.
 
+Developer functions **MUST** be documented via [mcdoc](./mcdoc.md#function).
+
 ### Inputs
 
 Given a developer function, `<pack ID>:<path...>/<function name>`, dedicated function input(s) **MUST** be specified through a struct at path `<function name>` (i.e. `<function name>.<input name>`) in the NBT storage location `<pack ID>:in`.

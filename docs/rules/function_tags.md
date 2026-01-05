@@ -24,6 +24,8 @@ Hooks are public by [definition](./private.md). Any datapack that writes to hook
 
 While other packs can write to hook tags, hooks **MUST NOT** be called by any namespace other than the one that they are defined in.
 
+Hooks **MUST** be documented via [mcdoc](./mcdoc.md#hook).
+
 ### Passing Data
 
 Dedicated data **MAY** be passed to/from subscribers. If so, it **MUST** be specified through a struct at path `<hook name>` (i.e. `<hook name>.<data key name>`) in the NBT storage location `<pack ID>:hook`. It is the responsibility of the developer to define how subscribers are allowed to interact with this data.
@@ -89,6 +91,8 @@ While other packs can write to abstract function tags, abstract functions **MUST
 
 If a pack define any abstract functions, it **MUST** declare at least one [abstract interface](../slimecore/manifest.md#abstract_declarations) (with the assumption that, for all abstract functions defined, providing a subscriber is part of the implementation requirements of some abstract interface).
 
+Abstract functions **MUST** be documented via [mcdoc](./mcdoc.md#abstract).
+
 #### Input and Output
 
 Dedicated abstract function input(s) **MUST** be specified through a struct at path `<abstract function name>` (i.e. `<abstract function name>.<input name>`) in the NBT storage location `<pack ID>:abstract/in`.
@@ -96,8 +100,6 @@ Dedicated abstract function input(s) **MUST** be specified through a struct at p
 Likewise, dedicated abstract function outputs(s) **MUST** be specified through a struct at path `<abstract function name>` (i.e. `<abstract function name>.<output name>`) in the NBT storage location `<pack ID>:abstract/out`.
 
 Output struct **MUST** be null before it's abstract function is called.
-
-Input and output structure **MUST** be declared through [mcdoc documentation](TODO).
 
 ### Example Usage
 

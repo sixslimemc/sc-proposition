@@ -4,7 +4,7 @@
 
 Public scoreboard objective names **MUST** be in the form `<pack ID>.<identifier>`, where `identifier` is a [public identifier](#public-identifiers).
 
-Private scoreboard objective names (with the exception of the [private register](./scoreboards.md#TODO)) **MUST** be in the form `_<pack ID>.<identifier>` where `identifier` is a [private identifier](#private-identifiers).
+Private scoreboard objective names (with the exception of the [private register](./scoreboards.md#private-register)) **MUST** be in the form `_<pack ID>.<identifier>` where `identifier` is a [private identifier](#private-identifiers).
 
 ### Entity Tags
 
