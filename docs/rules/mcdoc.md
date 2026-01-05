@@ -10,9 +10,7 @@ Datapacks **MUST** include a top-level `mcdoc` directory (`<datapack>/mcdoc/`) w
 
 All public mcdoc definitions **SHOULD** be properly documented via [documentation comments](https://spyglassmc.com/user/mcdoc/specification.html#doc-comments).
 
-> TENTATIVE: Mcdoc paths may be misunderstood by the SC author.
-
-All [mcdoc path references](https://spyglassmc.com/user/mcdoc/specification.html#path) **MUST NOT** be absolute. *(I.e. mcdoc paths must start with `super::`)*.
+> ISSUE CRITICAL: Currently, [mcdoc paths](https://spyglassmc.com/user/mcdoc/specification.html#path) to external packs (as well as any absolute path) rely on knowledge of datapack names; this is problematic conceptually due to it's impurity, and concretely because [standard datapack names](../slimecore/datapack_names.md#standard-format) have multiple formats.
 
 ---
 

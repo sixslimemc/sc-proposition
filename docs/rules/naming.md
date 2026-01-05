@@ -47,3 +47,7 @@ While not strictly required, public identifiers **SHOULD** conform to the follow
 ### Private Identifiers
 
 Private identifiers **SHOULD** conform to the [public identifier requirements](#public-identifiers).
+
+---
+
+*See [Datapack Naming](../slimecore/datapack_names.md) for specification on names of datapacks themselves.*
