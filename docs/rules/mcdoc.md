@@ -268,7 +268,7 @@ A datapack **MAY** omit the directory `hook` entirely if it does not define any 
 
 For all private mcdoc structure/definitions.
 
-From *[Private](./private#mcdoc-structure)*:
+From *[Private](./private.md#mcdoc-structure)*:
 
 > All structure defined by mcdoc files in the `_` directory and all subdirectories (`<datapack>/mcdoc/_/**`) [is private].
 

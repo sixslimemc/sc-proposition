@@ -14,14 +14,14 @@ The `/datapack enable` and `/datapack disable` commands **SHOULD NOT** be used u
 2. Call all [load tags](.//special_tags.md#load-tag).
 3. Call all [entrypoints](./manifest.md#entrypoints).
 
-Call order in each step is determined by the [world's current build](TODO).
+Call order in each step is determined by the [world's current build](./data.md).
 
 ## Rebuilding
 
-**Rebuilding** is the process of re-evaluating the [world's current build](TODO) given the currently installed/enabled/disabled packs. More specifically, it refers to the following sequence:
+**Rebuilding** is the process of re-evaluating the [world's current build](./data.md) given the currently installed/enabled/disabled packs. More specifically, it refers to the following sequence:
 
 1. Gather all [pack manifests](./manifest.md) of all installed packs (including disabled).
-2. Verify that all packs have a [known datapack path](TODO).
+2. Verify that all packs have a [known datapack path](./datapack_names.md).
 3. Evaluate a build with pack manifests of enabled packs:
       1. Verify that pack manifests are individually valid.
       2. Verify that there are no duplicate [packs IDs](./manifest.md/#pack_id-and-author_id).
@@ -32,7 +32,7 @@ Call order in each step is determined by the [world's current build](TODO).
       7. Verify that there exists possible [entrypoint](./manifest.md#entrypoints) and [preload entrypoint](./manifest.md#preload_entrypoints) orderings that fulfills all restrictions.
       8. Create a valid call order of preload entrypoints, load tags, and entrypoints.
 4. If any packs are being [disabled/uninstalled](./rebuilding.md#explicitly-rebuilding), uninstall/disable packs in reverse load order.
-5. Set the [world's current build](TODO) to the evaluated build.
+5. Set the [world's current build](./data.md) to the evaluated build.
 6. Trigger a [load](#loading).
 
 If any step in the rebuild process fails, the world's previous build remains applied.
@@ -43,4 +43,4 @@ Rebuilding can be [explicitly triggered](#explicitly-rebuilding).
 
 ### Explicitly Rebuilding
 
-Calling the [developer function](../rules/functions.md#developer-functions) `slimecore:rebuild` triggers an explicit rebuild. Explicit rebuilds allows for safe and tracked disabling/enabling/uninstalling of packs. Information on `slimecore:rebuild`'s usage can be found in it's respective [mcdoc](TODO) file within the [SlimeCore datapack](./index.md).
+Calling the [developer function](../rules/functions.md#developer-functions) `slimecore:rebuild` triggers an explicit rebuild. Explicit rebuilds allows for safe and tracked disabling/enabling/uninstalling of packs. Information on `slimecore:rebuild`'s usage can be found in it's respective [function mcdoc file](../rules/mcdoc.md#function) within the [SlimeCore datapack](./index.md).
