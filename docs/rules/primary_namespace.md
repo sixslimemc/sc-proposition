@@ -4,15 +4,15 @@
 
 A datapack **MUST** have exactly one **primary namespace** (also known as it's [pack ID](../slimecore/manifest.md#pack_id-and-author_id)).
 
-A datapack **MAY** define new resources in/using it's primary namespace.
+A datapack **MUST NOT** define new resources in namespaces other than it's primary namespace.
 
-A datapack **MUST NOT** define any new resources but **MAY** overwrite/change resources in namespaces other than it's primary namespace. Any resources changed in this way have their namespace referred to as **secondary namespaces** of the datapack.
+A datapack **MAY** overwrite/include resources in other namespaces if the resource already exists, given all [dependencies](../slimecore/manifest.md#dependencies) are fulfilled. Resources manipulated in this way have their namespace referred to as **secondary namespaces** of the datapack.
 
-> For example, appending or overwriting the block tag `#minecraft:dampens_vibrations` makes `minecraft` a secondary namespace. Adding a new block tag that does not already exist, `#minecraft:foo_bar`, is not be allowed.
+For example, including the block tag [`#minecraft:dampens_vibrations`](https://minecraft.wiki/w/Block_tag_(Java_Edition)#dampens_vibrations) in your datapack is allowed, and would make `minecraft` a secondary namespace. Adding a new block tag that does not already exist in the `minecraft` namespace, like `#minecraft:foo_bar`, is not allowed.
 
 ## Naming
 
-Primary namespace names **MUST** conform to the following:
+Primary namespace names **MUST** fulfill the following criteria:
 
 * Valid [namespace](https://minecraft.wiki/w/Identifier#Namespaces) name.
 * 1-64 characters in length.

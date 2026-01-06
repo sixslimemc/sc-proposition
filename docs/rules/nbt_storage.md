@@ -3,7 +3,7 @@
 
 ## Valid Locations
 
-Packs **MUST NOT** store data in any NBT storage locations except for the following:
+Data **MUST NOT** be stored in any NBT storage locations except for the following:
 
 ---
 
@@ -15,9 +15,9 @@ Data within this storage location is public and **SHOULD** be persistent.
 
 ### `<pack ID>:_` (and any subpath)
 
-For all private data. (By [definition](./private.md#nbt-storage-data), this is the only storage location that can hold private data.)
+For all private data. *(By [definition](./private.md#nbt-storage-data), this is the only storage location that can hold private data.)*
 
-Packs **MAY** store data in any subpath of `<pack ID>:_` (e.g. `<pack ID>:_/foo/bar`). 
+Additionally, private data **MAY** be stored in any subpath of `<pack ID>:_` (e.g. `<pack ID>:_/foo/bar`). 
 
 ### `<pack ID>:api`
 
@@ -25,7 +25,7 @@ For specific/specialized-use or otherwise contextual, public ephemeral data.
 
 Data within this storage location is public and **SHOULD** be ephemeral.
 
-> Conceptually similar to `<pack ID>:hook` but allows for flexibility of unique interaction/APIs (such as calling an externally provided function via macro).
+Intended to allow for flexibility of unique interactions/APIs, such as providing data to an externally provided function called via macro.
 
 ### `<pack ID>:hook`
 

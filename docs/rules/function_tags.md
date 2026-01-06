@@ -2,7 +2,7 @@
 
 ## Definition
 
-A datapack **MUST NOT** define any [function tags](https://minecraft.wiki/w/Function_tag_(Java_Edition)) that are not described by one of the following:
+A datapack **MUST NOT** define any [function tags](https://minecraft.wiki/w/Function_tag_(Java_Edition)) that are not definitions of the following:
 
 * [Hook](#hooks)
 * [Abstract Function](#abstract-functions)
@@ -20,15 +20,17 @@ Functions included/specified by a function tag are referred to as the tag's **su
 
 A **hook** is a function tag within the `hook` directory or any subdirectory therein (`#<pack ID>:hook/<path...>/<hook name>`).
 
-Hooks are public by [definition](./private.md). Any datapack that writes to hook tag (including it's definition) **MUST** set `"replace": false` (or omit `replace`).
+Hooks are public by [definition](./private.md). Any datapack that includes to hook tag **MUST** set `"replace": false` (or omit `replace`).
 
-While other packs can write to hook tags, hooks **MUST NOT** be called by any namespace other than the one that they are defined in.
+While packs can include (declare subscriber(s) for) hooks from outside of their namespace, hooks **MUST NOT** be called by any namespace other than the one that they are defined in.
 
 Hooks **MUST** be documented via [mcdoc](./mcdoc.md#hook).
 
 ### Passing Data
 
-Dedicated data **MAY** be passed to/from subscribers. If so, it **MUST** be specified through a struct at path `<hook name>` (i.e. `<hook name>.<data key name>`) in the NBT storage location `<pack ID>:hook`. It is the responsibility of the developer to define how subscribers are allowed to interact with this data.
+Dedicated data **MAY** be passed to/from subscribers. If so, it **MUST** be specified through a struct at path `<hook name>` (i.e. `<hook name>.<data key name>`) in the NBT storage location `<pack ID>:hook`.
+
+It is the responsibility of the developer to define how subscribers are allowed to interact with this data (e.g. whether it is read-only or not).
 
 ### Example Usage
 
@@ -71,7 +73,7 @@ execute store result storage foo:hook my_hook.some_data int 2 run data get stora
 
 ### Concept
 
-An abstract function represents a function with defined inputs and outputs, but an implementation that must be provided by another pack. Abstract functions are analagous to a [developer functions](./functions.md#developer-functions) but with the responsibilities of the defining and external pack reversed.
+An abstract function represents a function with defined inputs and outputs, but an implementation that **MUST** be provided by another pack. Abstract functions are analagous to a [developer functions](./functions.md#developer-functions) but with the responsibilities of the defining and external pack reversed.
 
 The following sequence is proper usage of an abstract function:
 
@@ -87,7 +89,7 @@ Abstract functions are public by [definition](./private.md). Any datapack that w
 
 Abstract functions **MUST** be defined empty and `"replace":false`.
 
-While other packs can write to abstract function tags, abstract functions **MUST NOT** be called by any namespace other than the one that they are defined in.
+While packs can include (provide implementation subscriber(s) for) abstract functions from outside of their namespace, abstract functions **MUST NOT** be called by any namespace other than the one that they are defined in.
 
 If a pack define any abstract functions, it **MUST** declare at least one [abstract interface](../slimecore/manifest.md#abstract_declarations) (with the assumption that, for all abstract functions defined, providing a subscriber is part of the implementation requirements of some abstract interface).
 

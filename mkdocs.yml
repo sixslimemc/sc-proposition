@@ -48,3 +48,4 @@ nav:
     - Loading & Rebuilding: slimecore/rebuilding.md
     - SlimeCore Data: slimecore/data.md
     - Datapack Naming: slimecore/datapack_names.md
+  - Known Issues: issues.md

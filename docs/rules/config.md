@@ -2,7 +2,9 @@
 
 ## Definition
 
-A pack's **config** is all NBT data in the storage location `<pack ID>:config`. Config is intended to provide a standard method of allowing users to configure pack behavior.
+A pack's **config** is all NBT data in the storage location `<pack ID>:config`.
+
+Config is intended to provide a standard method of allowing users to configure pack behavior.
 
 Config structure **MUST** be defined and documented via [mcdoc](./mcdoc.md#configmcdoc).
 
