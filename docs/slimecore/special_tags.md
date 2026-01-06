@@ -28,4 +28,4 @@ A pack's **uninstall tag** is `#<pack ID>:uninstall`.
 
 This tag is called during [rebuilding](./rebuilding.md#rebuilding) just before it's pack is [uninstalled](./rebuilding.md#explicitly-rebuilding).
 
-Functions within the scope of an uninstall tag **SHOULD** permanently and cleanly remove as much content defined by it's pack as possible--such that re-enabling/re-installation of the pack would be no different than installing it for the first time. Content removal includes but is not limited too: scoreboard objectives, NBT storage data, entities, custom items, etc.
+Functions within the scope of an uninstall tag **SHOULD** permanently and cleanly remove as much content defined by it's pack as possible--such that re-enabling/re-installation of the pack would be no different than installing it for the first time. Content removal includes but is not limited too: scoreboard objectives, NBT storage data (emphasis on [`<pack ID>:data`](../rules/nbt_storage.md#pack-iddata) and [`<pack ID>:config`](../rules/nbt_storage.md#pack-idconfig)), entities, custom items, etc.
