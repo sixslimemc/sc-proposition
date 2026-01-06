@@ -26,9 +26,16 @@ The SC proposition requires all worlds to have a loader datapack ([SlimeCore](./
 
 ---
 
+## Prerequisites
+
+General intermediate-level knowledge of Minecraft commands and datapacks is assumed. Familiarity with SNBT data manipulation via commands, function execution scope/order, and datapack structure are likely required for full understanding of the specification.
+
+Basic knowledge of [mcdoc](https://spyglassmc.com/user/mcdoc) is required for compliance with rules described in the [Mcdoc](./rules/mcdoc.md) page.
+
+> Without any prior knowledge, basic/required knowledge of mcdoc can be plausabily attained with reasonably low effort--even given that the user-documentation of mcdoc is WIP.
+
 ## Get Started
 
-It is recommended to look over the [Terminology](./terminology.md) page before reading any other pages.
+It is recommended to read the [Terminology](./terminology.md) page before reading further pages.
 
-The [Overview](./overview.md) page provides a brief but complete summary of this specification.
-
+A first-time reader may have the "smoothest" experience reading the pages of the SC proposition as they appear on the left sidebar, and it designed as such; however, this is completely optional.
