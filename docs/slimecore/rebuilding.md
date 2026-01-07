@@ -44,3 +44,11 @@ Rebuilding can be [explicitly triggered](#explicitly-rebuilding).
 ### Explicitly Rebuilding
 
 Calling the [developer function](../rules/functions.md#developer-functions) `slimecore:rebuild` triggers an explicit rebuild. Explicit rebuilds allows for safe and tracked disabling/enabling/uninstalling of packs. Information on `slimecore:rebuild`'s usage can be found in it's respective [function mcdoc file](../rules/mcdoc.md#function) within the [SlimeCore datapack](./index.md).
+
+---
+
+## Debugging and Development
+
+SlimeCore alone does not provide any logging or feedback when [loading](#loading) or [rebuilding](#rebuilding), but it does provide [hooks](../rules/function_tags.md#hooks) for these purposes, which any datapack can implement debug/logging subscribers.
+
+> A basic (unofficial) debugging/devtool datapack can be found [here](https://github.com/sixslimemc/scdev).

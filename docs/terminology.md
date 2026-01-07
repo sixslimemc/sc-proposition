@@ -1,5 +1,7 @@
 # Terminology
 
+The following terms are used within these pages to convey specific meanings in most instances; it should be obvious whether or not this meaning is intended through context:
+
 **Access** (verb) - To reference or use in *any way*. 
 
 **Content** (noun) - A general term for anything that can be introduced or changed by a datapack.

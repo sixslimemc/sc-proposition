@@ -202,7 +202,7 @@ See *[External URLs](#external-urls).*
 
 ### Download URLs
 
-> **TENTATIVE**
+> **TENTATIVE: Direct download links are somewhat a hassle to obtain, but create the most streamlined experience, especially if download service is not enforced.**
 
 URLs **MUST** use the https protocol and be a direct download (i.e. no clicking required). While no standard download service is enforced, it is **RECOMMENDED** to use [GitHub releases](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository) or [Modrinth](https://modrinth.com). Redirect services or shortened URLs **SHOULD NOT** be used.
 
