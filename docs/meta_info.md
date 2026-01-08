@@ -23,8 +23,6 @@ The author of the SC proposition is **SixSlime**.
 * **GitHub:** [sixslimemc](https://github.com/sixslimemc) (Minecraft org.) / [sixslime](https://github.com/sixslime) (user)
 * **Email:** globbylikesslime@gmail.com
 
-If you have any feedback, suggestions, comments, etc. feel free to contact any of the above.
-
 ---
 
 [GitHub Repository](https://github.com/sixslimemc/sc-proposition)
