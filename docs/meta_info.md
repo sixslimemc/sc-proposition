@@ -16,7 +16,7 @@ For those that desire to give the specification a try:
 
 ## Contributing/Feedback
 
-See [CONTRIBUTING.md] in the GitHub repository.
+See [CONTRIBUTING.md](https://github.com/sixslimemc/sc-proposition/blob/main/CONTRIBUTING.md).
 
 ## Author Info
 
@@ -27,6 +27,8 @@ The author of the SC proposition is **SixSlime**.
 * **GitHub:** [sixslimemc](https://github.com/sixslimemc) (Minecraft org.) / [sixslime](https://github.com/sixslime) (user)
 * **Email:** globbylikesslime@gmail.com
 
+### Contributors
+*(None yet.)*
 
 ---
 
