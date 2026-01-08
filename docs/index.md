@@ -2,7 +2,7 @@
 
 ## What?
 
-The SC proposition describes a specification/standard for Minecraft datapacks and their content.
+The SC proposition describes a specification/framework for Minecraft datapacks and their content.
 
 ## Why?
 
@@ -30,9 +30,7 @@ The SC proposition requires all worlds to have a loader datapack ([SlimeCore](./
 
 General intermediate-level knowledge of Minecraft commands and datapacks is assumed. Familiarity with SNBT data manipulation via commands, function execution scope/order, and datapack structure are likely required for full understanding of the specification.
 
-Basic knowledge of [mcdoc](https://spyglassmc.com/user/mcdoc) is required for compliance with rules described in the [Mcdoc](./rules/mcdoc.md) page.
-
-> Without any prior knowledge, basic/required knowledge of mcdoc can be plausabily attained with reasonably low effort--even given that the user-documentation of mcdoc is WIP.
+Basic knowledge of [mcdoc](https://spyglassmc.com/user/mcdoc) (primarily type definitions and dispatching) is required for compliance with rules described in the [Mcdoc](./rules/mcdoc.md) page.
 
 ## Get Started
 
