@@ -1,0 +1,53 @@
+# NBT Storage Locations
+
+
+## Valid Locations
+
+Data **MUST NOT** be stored in any NBT storage locations except for the following:
+
+---
+
+### `<pack ID>:data`
+
+For general-purpose public data.
+
+Data within this storage location is public and **SHOULD** be persistent.
+
+### `<pack ID>:_` (and any subpath)
+
+For all private data. *(By [definition](./private.md#nbt-storage-data), this is the only storage location that can hold private data.)*
+
+Additionally, private data **MAY** be stored in any subpath of `<pack ID>:_` (e.g. `<pack ID>:_/foo/bar`). 
+
+### `<pack ID>:api`
+
+For specific/specialized-use or otherwise contextual, public ephemeral data.
+
+Data within this storage location is public and **SHOULD** be ephemeral.
+
+Intended to allow for flexibility of unique interactions/APIs, such as providing data to an externally provided function called via macro.
+
+### `<pack ID>:hook`
+
+For passing data through hooks *(see [Hooks](./function_tags.md#hooks))*.
+
+### `<pack ID>:in`
+
+For passing inputs to developer functions *(see [Developer Functions](./functions.md#developer-functions))*.
+
+### `<pack ID>:out`
+
+For passing outputs from developer functions *(see [Developer Functions](./functions.md#developer-functions))*.
+
+### `<pack ID>:abstract/in`
+
+For passing inputs to abstract functions *(see [Abstract Functions](./function_tags.md#abstract-functions))*.
+
+### `<pack ID>:abstract/out`
+
+For passing outputs from abstract functions *(see [Abstract Functions](./function_tags.md#abstract-functions))*.
+
+### `<pack ID>:config`
+
+For specifying pack configuration *(see [Pack Config](./config.md))*.
+
