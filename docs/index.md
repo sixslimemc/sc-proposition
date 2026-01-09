@@ -36,4 +36,4 @@ Basic knowledge of [mcdoc](https://spyglassmc.com/user/mcdoc) (primarily type de
 
 It is recommended to read the [Terminology](./terminology.md) page before reading further pages.
 
-A first-time reader may have the "smoothest" experience reading the pages of the SC proposition as they appear on the left sidebar, and it designed as such; however, this is completely optional.
+First-time readers may have the smoothest experience by reading the SC proposition pages in the order they appear in the left sidebar; however, this is entirely optional.
