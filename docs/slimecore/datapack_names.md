@@ -8,9 +8,9 @@ All datapack names (name of folder in world's `datapack` directory) **SHOULD** c
 
 #### Authored and Versioned
 
-`<author ID>.<pack ID> <major ver>.<minor ver>.<patch ver>`
+`<author ID>.<pack ID>.<major ver>.<minor ver>.<patch ver>`
 
-*Example: `sixslime.foo 1.2.3`*
+*Example: `sixslime.foo.1.2.3`*
 
 #### Authored and Unversioned
 
@@ -20,9 +20,9 @@ All datapack names (name of folder in world's `datapack` directory) **SHOULD** c
 
 #### Unauthored and Versioned
 
-`<pack ID> <major ver>.<minor ver>.<patch ver>`
+`<pack ID>.<major ver>.<minor ver>.<patch ver>`
 
-*Example: `foo 1.2.3`*
+*Example: `foo.1.2.3`*
 
 #### Unauthored and Unversioned
 

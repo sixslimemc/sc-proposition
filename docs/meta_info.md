@@ -2,8 +2,7 @@
 
 ## About
 
-As the name implies, this is currently a **proposition**, proposed to the Minecraft datapack community for discussion and contribution. It is the intention to gather community feedback and approval before finalizing any aspect of this proposition. Areas marked by `TENTATIVE: <reason>` are in particular need of discussion/consensus.
-
+As the name implies, this is currently a **proposition**. It is intended to gather community feedback and approval before a finalized version is created. Areas marked by `TENTATIVE: <reason>` are in particular need of discussion/consensus.
 
 Regardless, the described specification is **feature-complete** and should be able to be implemented fully.
 
