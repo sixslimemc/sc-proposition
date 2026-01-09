@@ -2,7 +2,7 @@
 
 ## What?
 
-The SC proposition describes a specification/framework for Minecraft datapacks.
+The SC proposition describes a specification/framework for Minecraft datapacks and their content.
 
 ## Why?
 
