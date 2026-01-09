@@ -20,7 +20,7 @@ These rules are designed to be:
 
 * **Implementable with no third party tools.** Any developer writing a datapack "by hand" should be able to comply with these rules without unreasonable effort.
 * **Unobtrusive.** Compliance with these rules should not unnecessarily conflict with a developer's desired development practices.
-* **Effective.** Compliance with these rules should "just work".
+* **Effective.** Compliance with these rules should fix/relieve as many targeted issues as possible, such that further effort from developers or users is unecessary.
 
 The SC proposition requires all worlds to have a loader datapack ([SlimeCore](./slimecore/index.md)) installed; issues related to datapack manifests/loading would be impossible to address without this requirement.
 
