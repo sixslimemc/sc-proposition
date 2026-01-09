@@ -6,7 +6,7 @@ The SC proposition describes a specification/framework for Minecraft datapacks a
 
 ## Why?
 
-The cability and community of Minecraft datapack-ing is growing; The standards of datapack inter-operability are lagging far behind. While general "good practices" have been developed and shared informally, there is no community consensus or formal documentation of standards.
+The capability and community of Minecraft datapack-ing is growing; The standards of datapack inter-operability are lagging far behind. While general "good practices" have been developed and shared informally, there is no community consensus or formal documentation of standards.
 
 Additionally, datapack manifests (`pack.mcmeta`) do not support many fundamental features that software package manifests often have, such as dependencies, versioning, metadata, etc. Datapack loading is managed in an ad-hoc manner in-game via the `/datapack` command; this is very fragile and dependent on the user's knowledge of installed datapacks.
 

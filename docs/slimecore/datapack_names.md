@@ -10,13 +10,13 @@ All datapack names (name of folder in world's `datapack` directory) **SHOULD** c
 
 `<author ID>.<pack ID>.<major ver>.<minor ver>.<patch ver>`
 
-*Example: `sixslime.foo.1.2.3`*
+*Example: `bar.foo.1.2.3`*
 
 #### Authored and Unversioned
 
 `<author ID>.<pack ID>`
 
-*Example: `sixslime.foo`*
+*Example: `bar.foo`*
 
 #### Unauthored and Versioned
 
