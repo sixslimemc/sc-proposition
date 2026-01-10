@@ -1,4 +1,8 @@
-# Custom Data Namespacing
+# Content Namespacing
+
+## Direct Namespacing
+
+All content a pack defines that is namespaced directly (matches the format `<namespace>:<...>`) **MUST** have the namespace match the pack's pack ID (`<pack ID>:<...>`). *(This is already mostly enforced by the rest of the specification, but this includes things like random number sequences, stopwatches, etc.)*
 
 ## Custom Data Component
 
@@ -9,7 +13,6 @@ Packs **MUST NOT** define any data in the `minecraft:custom_data` component outs
 From [Private](./private.md#minecraftcustom_data-component-data):
 
 > Data at path `<pack ID>._` in the `minecraft:custom_data` component [is defined as private].
-
 
 ## Pack-Defined Data Locations
 
